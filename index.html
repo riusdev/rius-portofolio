@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rius Portfolio Ultimate Pro</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===================== GLOBAL ===================== */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; scroll-behavior:smooth;}
+body { background:#0f172a; color:white; overflow-x:hidden; position:relative; }
+a { text-decoration:none; color:inherit; }
+section { padding:80px 10%; }
+
+/* ===================== LOADING ===================== */
+#loading { position:fixed; top:0; left:0; width:100%; height:100%; background:#0f172a; display:flex; justify-content:center; align-items:center; z-index:3000; }
+#loading div { width:50px; height:50px; border:5px solid #38bdf8; border-top:5px solid transparent; border-radius:50%; animation:spin 1s linear infinite;}
+@keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+
+/* ===================== NAVBAR ===================== */
+nav { display:flex; justify-content:space-between; align-items:center; padding:20px 10%; position:sticky; top:0; background:rgba(2,6,23,0.9); z-index:1000; }
+nav h1 { color:#38bdf8; font-size:24px; }
+nav a { margin-left:25px; font-weight:500; transition:0.3s; }
+nav a:hover { color:#38bdf8; }
+
+/* ===================== HERO ===================== */
+.hero { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; min-height:90vh; position:relative; overflow:hidden;}
+.hero .profile { width:250px; height:250px; border-radius:50%; border:5px solid #38bdf8; object-fit:cover; box-shadow:0 0 40px #38bdf8; animation:float 4s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);} }
+
+.hero-text { max-width:550px; }
+.hero-text h1 { font-size:44px; margin-bottom:20px; }
+.hero-text h1 span { color:#38bdf8; }
+.hero-text p { margin-bottom:25px; color:#cbd5e1; min-height:30px; }
+.hero-text .btn { background:#38bdf8; color:black; padding:14px 28px; border-radius:10px; font-weight:600; transition:0.3s; }
+.hero-text .btn:hover { transform:scale(1.05); }
+
+/* ===================== SERVICES ===================== */
+.services { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; margin-top:40px; }
+.card { background:#020617; padding:25px; border-radius:18px; text-align:center; transition:0.4s; cursor:pointer; }
+.card:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 0 30px #38bdf8; }
+.card h3 { margin-bottom:10px; }
+
+/* ===================== PORTFOLIO ===================== */
+.portfolio-filter { text-align:center; margin-bottom:30px; }
+.portfolio-filter button { background:#38bdf8; border:none; padding:8px 15px; margin:5px; border-radius:6px; cursor:pointer; color:black; font-weight:600; transition:0.3s;}
+.portfolio-filter button:hover, .portfolio-filter button.active { transform:scale(1.05); background:#0f172a; color:#38bdf8; border:2px solid #38bdf8;}
+.portfolio { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; margin-top:20px; }
+.project { position:relative; overflow:hidden; border-radius:18px; cursor:pointer; }
+.project img { width:100%; display:block; transition:0.4s; }
+.project:hover img { transform:scale(1.08); }
+.overlay { position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; opacity:0; transition:0.3s; font-weight:600; color:white; }
+.project:hover .overlay { opacity:1; }
+
+/* ===================== CONTACT ===================== */
+.contact { max-width:500px; margin:auto; background:#020617; padding:25px; border-radius:12px; box-shadow:0 0 20px #38bdf8; }
+.contact input, .contact textarea { width:100%; padding:12px; margin:10px 0; border-radius:6px; border:none; background:#0f172a; color:white; }
+.contact button { background:#38bdf8; color:black; padding:12px 25px; border-radius:8px; font-weight:600; cursor:pointer; transition:0.3s; }
+.contact button:hover { transform:scale(1.05); }
+
+/* ===================== FOOTER ===================== */
+footer { text-align:center; padding:20px; margin-top:50px; color:#94a3b8; }
+
+/* ===================== POPUP IMAGE ===================== */
+.popup { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:none; align-items:center; justify-content:center; z-index:2000; }
+.popup img { max-width:90%; border-radius:10px; }
+.show { display:flex; }
+
+/* ===================== SCROLL ANIMATION ===================== */
+.hidden { opacity:0; transform:translateY(40px); transition:1s; }
+.showing { opacity:1; transform:translateY(0); }
+
+/* ===================== MOBILE ===================== */
+@media(max-width:768px){
+  .hero { flex-direction:column; text-align:center; }
+  .hero .profile { margin-top:40px; }
+}
+
+/* ===================== PARTICLES ===================== */
+#particles { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; background:#0f172a; }
+canvas { display:block; }
+
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loading"><div></div></div>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <h1>Rius</h1>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero hidden">
+  <img src="http://i.pravatar.cc/300" class="profile">
+  <div class="hero-text">
+    <h1>Halo, Saya <span>Rius</span></h1>
+    <p id="typing"></p>
+    <a href="CV.pdf" class="btn">Download CV</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="hidden">
+  <h2 style="text-align:center;color:#38bdf8;margin-bottom:30px;">Services</h2>
+  <div class="services">
+    <div class="card"><h3>Website Development</h3>Membangun website modern & responsif</div>
+    <div class="card"><h3>UI/UX Design</h3>Desain interaktif & menarik</div>
+    <div class="card"><h3>Landing Page</h3>Landing page cepat & konversi tinggi</div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="hidden">
+  <h2 style="text-align:center;color:#38bdf8;margin-bottom:20px;">Portfolio</h2>
+  <div class="portfolio-filter">
+    <button class="active" onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('web')">Web</button>
+    <button onclick="filterProjects('ui')">UI</button>
+    <button onclick="filterProjects('landing')">Landing Page</button>
+  </div>
+  <div class="portfolio">
+    <div class="project web" onclick="openPopup(this)"><img src="https://picsum.photos/400/300?1"><div class="overlay">Web Project 1</div></div>
+    <div class="project ui" onclick="openPopup(this)"><img src="https://picsum.photos/400/300?2"><div class="overlay">UI Project 1</div></div>
+    <div class="project landing" onclick="openPopup(this)"><img src="https://picsum.photos/400/300?3"><div class="overlay">Landing Project 1</div></div>
+    <div class="project web" onclick="openPopup(this)"><img src="https://picsum.photos/400/300?4"><div class="overlay">Web Project 2</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact hidden">
+  <h2 style="text-align:center;color:#38bdf8;margin-bottom:20px;">Contact Me</h2>
+  <p>Email: devrius0@gmail.com</p>
+  <p>WhatsApp: 081338693093</p>
+  <input type="text" placeholder="Nama">
+  <input type="email" placeholder="Email">
+  <textarea rows="5" placeholder="Pesan"></textarea>
+  <button>Kirim</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Rius Portfolio
+</footer>
+
+<!-- POPUP -->
+<div class="popup" id="popup" onclick="closePopup()">
+  <img id="popupImg">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+// ================= LOADING =================
+window.addEventListener("load", ()=>{ document.getElementById("loading").style.display="none"; });
+
+// ================= TYPING EFFECT =================
+const typingEl = document.getElementById("typing");
+const texts = ["Front-End Developer profesional.", "Membuat website modern & interaktif.", "Portfolio yang siap menarik klien."];
+let i = 0, j = 0;
+function type(){ 
+  if(i<texts.length){
+    if(j<texts[i].length){ typingEl.textContent += texts[i][j]; j++; setTimeout(type,50);}
+    else { setTimeout(()=>{ typingEl.textContent=""; j=0; i=(i+1)%texts.length; type(); },1500); }
+  }
+}
+type();
+
+// ================= PARTICLES =================
+particlesJS("particles", { 
+  "particles": { "number": { "value":50 }, "size": { "value":3 }, "move": { "speed":1 }, "line_linked": { "enable": true } },
+  "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" } } }
+});
+
+// ================= SCROLL ANIMATION =================
+const observer = new IntersectionObserver(entries=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add("showing"); } }); });
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+
+// ================= POPUP =================
+function openPopup(project){ let src=project.querySelector("img").src; document.getElementById("popupImg").src=src; document.getElementById("popup").classList.add("show"); }
+function closePopup(){ document.getElementById("popup").classList.remove("show"); }
+
+// ================= PORTFOLIO FILTER =================
+function filterProjects(category){
+  document.querySelectorAll(".portfolio-filter button").forEach(b=>b.classList.remove("active"));
+  event.target.classList.add("active");
+  document.querySelectorAll(".project").forEach(p=>{
+    if(category=="all"){ p.style.display="block"; }
+    else{ p.style.display = p.classList.contains(category) ? "block" : "none"; }
+  });
+}
+</script>
+</body>
+</html>
