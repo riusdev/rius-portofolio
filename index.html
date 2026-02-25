@@ -1,7 +1,15 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Premium Business Website</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rius — Freelancer Website Profesional</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
 
 *{
 margin:0;
@@ -14,6 +22,7 @@ body{
 background:#020617;
 color:white;
 line-height:1.6;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -27,6 +36,7 @@ background:rgba(2,6,23,0.9);
 position:sticky;
 top:0;
 z-index:1000;
+backdrop-filter:blur(10px);
 }
 
 .logo{
@@ -55,6 +65,17 @@ background:radial-gradient(circle at 20% 20%, #0ea5e9 0%, transparent 40%);
 
 .hero-text{
 max-width:550px;
+animation:fadeUp 1s ease;
+}
+
+.badge{
+display:inline-block;
+background:rgba(56,189,248,0.15);
+color:#38bdf8;
+padding:8px 15px;
+border-radius:20px;
+margin-bottom:20px;
+font-size:14px;
 }
 
 .hero h1{
@@ -69,6 +90,13 @@ color:#38bdf8;
 .hero img{
 width:420px;
 border-radius:20px;
+box-shadow:0 0 40px rgba(56,189,248,0.3);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
 }
 
 .btn{
@@ -93,6 +121,27 @@ section{
 padding:80px 10%;
 }
 
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px;
+text-align:center;
+}
+
+.stat{
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:12px;
+}
+
+.stat h2{
+color:#38bdf8;
+font-size:32px;
+}
+
 /* SERVICES */
 
 .grid{
@@ -115,21 +164,6 @@ transform:translateY(-10px);
 border-color:#38bdf8;
 }
 
-/* ABOUT */
-
-.about{
-display:flex;
-align-items:center;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:40px;
-}
-
-.about img{
-width:400px;
-border-radius:15px;
-}
-
 /* PORTFOLIO */
 
 .portfolio{
@@ -140,6 +174,7 @@ margin-top:40px;
 }
 
 .project{
+position:relative;
 overflow:hidden;
 border-radius:15px;
 }
@@ -148,11 +183,30 @@ border-radius:15px;
 width:100%;
 height:220px;
 object-fit:cover;
-transition:0.4s;
+transition:0.5s;
 }
 
 .project:hover img{
 transform:scale(1.1);
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(transparent, rgba(0,0,0,0.8));
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding:20px;
+opacity:0;
+transition:0.4s;
+}
+
+.project:hover .overlay{
+opacity:1;
 }
 
 /* PRICING */
@@ -170,15 +224,24 @@ padding:30px;
 border-radius:15px;
 text-align:center;
 transition:0.3s;
+position:relative;
 }
 
 .price:hover{
 transform:translateY(-10px);
-box-shadow:0 0 30px #38bdf8;
+box-shadow:0 0 30px rgba(56,189,248,0.4);
 }
 
-.price h2{
-color:#38bdf8;
+.popular{
+position:absolute;
+top:-12px;
+right:20px;
+background:#38bdf8;
+color:black;
+padding:5px 12px;
+border-radius:8px;
+font-size:12px;
+font-weight:600;
 }
 
 /* TESTI */
@@ -230,83 +293,242 @@ max-width:400px;
 margin-top:30px;
 }
 
-.about{
-flex-direction:column;
-text-align:center;
 }
 
-.about img{
-width:100%;
-max-width:400px;
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-}
+</style>
+</head>
 
-</style></head>
-<body><nav>
-<div class="logo">BusinessPro</div><div>
+<body>
+
+<nav>
+<div class="logo">Rius Dev</div>
+<div>
 <a href="#services">Layanan</a>
 <a href="#portfolio">Portfolio</a>
 <a href="#pricing">Harga</a>
 <a href="#contact">Contact</a>
 </div>
-</nav><!-- HERO --><section class="hero"><div class="hero-text"><h1>Meningkatkan <span>Kepercayaan Bisnis</span> Anda Dengan Website Profesional</h1><p>Kami membantu bisnis tampil modern, profesional, dan dipercaya pelanggan melalui website berkualitas tinggi.</p><a href="https://wa.me/6281338693093" class="btn">Konsultasi Gratis</a>
+</nav>
 
-</div><img src="assets/images/hero.jpg"></section><!-- SERVICES --><section id="services"><h2 style="color:#38bdf8">Layanan Kami</h2><div class="grid"><div class="card">
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<div class="badge">🚀 Freelancer Website Profesional</div>
+
+<h1>Saya Membantu Bisnis Anda Tampil <span>Lebih Profesional</span></h1>
+
+<p>Website modern, cepat, mobile friendly, dan meningkatkan kepercayaan pelanggan.</p>
+
+<a href="https://wa.me/6281338693093" class="btn">Konsultasi Gratis</a>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200">
+
+</section>
+
+<!-- STATS -->
+
+<section>
+
+<h2 style="color:#38bdf8">Kenapa Pilih Saya?</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>50+</h2>
+<p>Project Design</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Client Puas</p>
+</div>
+
+<div class="stat">
+<h2>24 Jam</h2>
+<p>Support</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 style="color:#38bdf8">Layanan</h2>
+
+<div class="grid">
+
+<div class="card">
 <h3>Website Company Profile</h3>
 <p>Website profesional untuk meningkatkan kredibilitas bisnis.</p>
-</div><div class="card">
+</div>
+
+<div class="card">
 <h3>Landing Page Jualan</h3>
 <p>Desain fokus konversi untuk meningkatkan penjualan.</p>
-</div><div class="card">
+</div>
+
+<div class="card">
 <h3>Website Custom</h3>
 <p>Fitur sesuai kebutuhan bisnis Anda.</p>
-</div></div></section><!-- ABOUT --><section><div class="about"><div>
-<h2 style="color:#38bdf8">Kenapa Pilih Kami?</h2>
-<p>Kami berpengalaman membuat website modern dengan desain elegan, cepat, dan mobile friendly.</p><p>✔ Desain Premium  
-✔ Loading Cepat  
-✔ SEO Friendly  
-✔ Support Setelah Website Jadi  
-</p></div><img src="assets/images/about.jpg"></div></section><!-- PORTFOLIO --><section id="portfolio"><h2 style="color:#38bdf8">Portfolio</h2><div class="portfolio"><div class="project">
-<img src="assets/images/project1.jpg">
-</div><div class="project">
-<img src="assets/images/project2.jpg">
-</div><div class="project">
-<img src="assets/images/project3.jpg">
-</div></div></section><!-- PRICING --><section id="pricing"><h2 style="color:#38bdf8">Harga Paket</h2><div class="pricing"><div class="price">
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<h2 style="color:#38bdf8">Portfolio</h2>
+
+<div class="portfolio">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200">
+<div class="overlay">
+<h3>Website Furniture</h3>
+<p>Company Profile</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200">
+<div class="overlay">
+<h3>Landing Page Produk</h3>
+<p>Sales Design</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200">
+<div class="overlay">
+<h3>Website Bisnis</h3>
+<p>Professional UI</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+<h2 style="color:#38bdf8">Harga Paket</h2>
+
+<div class="pricing">
+
+<div class="price">
 <h2>Starter</h2>
 <h3>Rp 1.500.000</h3>
 <p>1 Halaman</p>
 <p>Desain Modern</p>
 <p>Mobile Friendly</p>
-<a href="#" class="btn">Pesan</a>
-</div><div class="price">
+<a href="https://wa.me/6281338693093" class="btn">Pesan</a>
+</div>
+
+<div class="price">
+<div class="popular">POPULER</div>
 <h2>Business</h2>
 <h3>Rp 3.000.000</h3>
 <p>5 Halaman</p>
 <p>SEO Basic</p>
 <p>Revisi 2x</p>
-<a href="#" class="btn">Pesan</a>
-</div><div class="price">
+<a href="https://wa.me/6281338693093" class="btn">Pesan</a>
+</div>
+
+<div class="price">
 <h2>Premium</h2>
 <h3>Rp 6.000.000</h3>
 <p>Unlimited Halaman</p>
 <p>Fitur Lengkap</p>
 <p>Support 30 Hari</p>
-<a href="#" class="btn">Pesan</a>
-</div></div></section><!-- TESTIMONIAL --><section><h2 style="color:#38bdf8">Testimonial</h2><div class="grid"><div class="testi">
-⭐⭐⭐⭐⭐
-<p>Website sangat profesional dan meningkatkan kepercayaan pelanggan kami.</p>
-<b>— Owner Bisnis</b>
-</div><div class="testi">
-⭐⭐⭐⭐⭐
-<p>Pelayanan cepat dan hasil memuaskan.</p>
-<b>— Client</b>
-</div></div></section><!-- CTA --><div class="cta"><h2>Siap Membuat Bisnis Anda Lebih Profesional?</h2>
-<p>Konsultasi gratis sekarang juga</p><a href="https://wa.me/6281338693093" class="btn">Chat WhatsApp</a>
+<a href="https://wa.me/6281338693093" class="btn">Pesan</a>
+</div>
 
-</div><!-- CONTACT --><section id="contact"><div class="contact"><h2 style="color:#38bdf8">Contact</h2><p>Email: devrius@gmail.com</p>
-<p>WhatsApp: 081338693093</p></div></section><footer>
-© 2026 BusinessPro
-</footer></body>
+</div>
+
+</section>
+
+<!-- TESTIMONIAL -->
+
+<section>
+
+<h2 style="color:#38bdf8">Testimonial</h2>
+
+<div class="grid">
+
+<div class="testi">
+⭐⭐⭐⭐⭐
+<p>Website sangat profesional dan meningkatkan kepercayaan bisnis kami.</p>
+<b>— Owner Bisnis</b>
+</div>
+
+<div class="testi">
+⭐⭐⭐⭐⭐
+<p>Pelayanan cepat dan hasil sangat memuaskan.</p>
+<b>— Client</b>
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<div class="cta">
+
+<h2>Siap Membuat Website Profesional?</h2>
+
+<p>Konsultasi gratis sekarang juga</p>
+
+<a href="https://wa.me/6281338693093" class="btn">Chat WhatsApp</a>
+
+</div>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact">
+
+<h2 style="color:#38bdf8">Contact</h2>
+
+<p>Email: devrius@gmail.com</p>
+<p>WhatsApp: 081338693093</p>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Rius Developer
+
+</footer>
+
+</body>
 </html>
