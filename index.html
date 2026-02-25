@@ -1,325 +1,312 @@
 <!DOCTYPE html><html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rius — Frontend Developer</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Premium Business Website</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>
 
-/* ===== GLOBAL ===== */
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0f172a;color:white;overflow-x:hidden;}
-#particles{position:fixed;inset:0;z-index:-1;}
-
-.cursor{
-width:20px;
-height:20px;
-border:2px solid #38bdf8;
-border-radius:50%;
-position:fixed;
-pointer-events:none;
-transform:translate(-50%,-50%);
-z-index:9999;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-/* ===== NAVBAR ===== */
+body{
+background:#020617;
+color:white;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 10%;
+background:rgba(2,6,23,0.9);
 position:sticky;
 top:0;
-background:rgba(2,6,23,0.7);
-backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav h1{color:#38bdf8;}
-nav a{margin-left:25px;color:white;text-decoration:none;}
-.toggle{cursor:pointer;margin-left:20px;}
+.logo{
+font-size:22px;
+font-weight:700;
+color:#38bdf8;
+}
 
-/* ===== HERO ===== */
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+}
+
+/* HERO */
+
 .hero{
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
-flex-wrap:wrap;
-min-height:100vh;
 padding:60px 10%;
+flex-wrap:wrap;
+background:radial-gradient(circle at 20% 20%, #0ea5e9 0%, transparent 40%);
 }
 
-.profile{
-width:240px;
-height:240px;
-border-radius:50%;
-border:5px solid #38bdf8;
-object-fit:cover;
-box-shadow:0 0 50px #38bdf8;
+.hero-text{
+max-width:550px;
 }
 
-.hero-text h1{font-size:45px;margin-bottom:20px;}
-.hero-text span{color:#38bdf8;}
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero img{
+width:420px;
+border-radius:20px;
+}
 
 .btn{
 background:#38bdf8;
 color:black;
-padding:12px 25px;
-border-radius:8px;
-font-weight:600;
+padding:14px 30px;
+border-radius:10px;
 text-decoration:none;
 display:inline-block;
-margin:5px;
+margin-top:15px;
+font-weight:600;
+transition:0.3s;
 }
 
-/* ===== GLASS ===== */
-.glass{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(12px);
-border-radius:15px;
+.btn:hover{
+transform:scale(1.05);
 }
 
-/* ===== SECTION ===== */
-section{padding:70px 10%;}
+/* SECTION */
 
-/* ===== SKILLS ===== */
-.skill{margin:15px 0;}
-.bar{
-background:#020617;
-border-radius:10px;
-overflow:hidden;
-}
-.progress{
-height:12px;
-background:#38bdf8;
-width:0%;
+section{
+padding:80px 10%;
 }
 
-/* ===== STATS ===== */
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
-text-align:center;
-margin-top:40px;
-}
+/* SERVICES */
 
-.stat{
-padding:20px;
-}
-
-/* ===== SERVICES ===== */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:40px;
-}
-
-.card img{width:100%;border-radius:12px;margin-bottom:15px;}
-.card{padding:15px;text-align:center;}
-
-/* ===== PORTFOLIO ===== */
-.portfolio{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:15px;
+padding:30px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#38bdf8;
+}
+
+/* ABOUT */
+
+.about{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.about img{
+width:400px;
+border-radius:15px;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:40px;
 }
 
 .project{
-position:relative;
 overflow:hidden;
 border-radius:15px;
-cursor:pointer;
 }
 
 .project img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
+transition:0.4s;
 }
 
-.overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.6);
-display:flex;
-align-items:center;
-justify-content:center;
-opacity:0;
+.project:hover img{
+transform:scale(1.1);
+}
+
+/* PRICING */
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.price{
+border:1px solid #38bdf8;
+padding:30px;
+border-radius:15px;
+text-align:center;
 transition:0.3s;
 }
 
-.project:hover .overlay{opacity:1;}
-
-/* ===== TESTIMONI ===== */
-.testimonials{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.price:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px #38bdf8;
 }
+
+.price h2{
+color:#38bdf8;
+}
+
+/* TESTI */
 
 .testi{
-padding:20px;
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:12px;
 }
 
-/* ===== CONTACT ===== */
-.contact{max-width:500px;margin:auto;padding:25px;}
-.contact input,.contact textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:6px;
-border:none;
-background:#020617;
-color:white;
+/* CTA */
+
+.cta{
+background:linear-gradient(90deg,#0ea5e9,#38bdf8);
+padding:60px 10%;
+border-radius:20px;
+margin:40px 10%;
+text-align:center;
 }
 
-/* ===== MODAL ===== */
-.modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.8);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:2000;
+/* CONTACT */
+
+.contact{
+max-width:500px;
+margin:auto;
+text-align:center;
 }
 
-.modal-box{
-background:white;
-color:black;
+/* FOOTER */
+
+footer{
+text-align:center;
 padding:30px;
-border-radius:10px;
+opacity:0.6;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero img{
+width:100%;
+max-width:400px;
+margin-top:30px;
+}
+
+.about{
+flex-direction:column;
+text-align:center;
+}
+
+.about img{
+width:100%;
 max-width:400px;
 }
 
-.close{
-cursor:pointer;
-float:right;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-.hero{flex-direction:column;text-align:center;}
-.profile{margin-bottom:30px;}
-}
-
-</style></head><body><div class="cursor"></div>
-<div id="particles"></div><!-- NAVBAR --><nav>
-<h1>Rius</h1>
-<div>
-<a href="#home">Home</a>
-<a href="#skills">Skills</a>
-<a href="#services">Services</a>
+</style></head>
+<body><nav>
+<div class="logo">BusinessPro</div><div>
+<a href="#services">Layanan</a>
 <a href="#portfolio">Portfolio</a>
+<a href="#pricing">Harga</a>
 <a href="#contact">Contact</a>
 </div>
-</nav><!-- HERO --><section id="home" class="hero"><img src="assets/images/rius.jpg" class="profile"><div class="hero-text">
-<h1>Halo, Saya <span>Rius</span></h1>
-<p>Frontend Developer Profesional</p><a href="assets/cv-rius.pdf" class="btn" download>Download CV</a>
-<a href="#contact" class="btn">Hire Me</a>
+</nav><!-- HERO --><section class="hero"><div class="hero-text"><h1>Meningkatkan <span>Kepercayaan Bisnis</span> Anda Dengan Website Profesional</h1><p>Kami membantu bisnis tampil modern, profesional, dan dipercaya pelanggan melalui website berkualitas tinggi.</p><a href="https://wa.me/6281338693093" class="btn">Konsultasi Gratis</a>
 
-</div></section><!-- SKILLS --><section id="skills"><h2 style="text-align:center;color:#38bdf8">Skills</h2><div class="skill">
-HTML
-<div class="bar"><div class="progress" data-width="90%"></div></div>
-</div><div class="skill">
-CSS
-<div class="bar"><div class="progress" data-width="85%"></div></div>
-</div><div class="skill">
-JavaScript
-<div class="bar"><div class="progress" data-width="75%"></div></div>
-</div><div class="stats"><div class="stat glass">
-<h2 class="counter" data-target="25">0</h2>
-<p>Projects</p>
-</div><div class="stat glass">
-<h2 class="counter" data-target="15">0</h2>
-<p>Clients</p>
-</div><div class="stat glass">
-<h2 class="counter" data-target="2">0</h2>
-<p>Years Experience</p>
-</div></div></section><!-- SERVICES --><section id="services"><h2 style="text-align:center;color:#38bdf8">Services</h2><div class="services"><div class="card glass">
-<img src="assets/images/service-web.jpeg">
-<h3>Website Development</h3>
-</div><div class="card glass">
-<img src="assets/images/service-ui.jpeg">
-<h3>UI/UX Design</h3>
-</div><div class="card glass">
-<img src="assets/images/service-landing.jpeg">
-<h3>Landing Page</h3>
-</div></div></section><!-- PORTFOLIO --><section id="portfolio"><h2 style="text-align:center;color:#38bdf8">Portfolio</h2><div class="portfolio"><div class="project glass" onclick="openModal('Project 1','Website modern & interaktif')">
+</div><img src="assets/images/hero.jpg"></section><!-- SERVICES --><section id="services"><h2 style="color:#38bdf8">Layanan Kami</h2><div class="grid"><div class="card">
+<h3>Website Company Profile</h3>
+<p>Website profesional untuk meningkatkan kredibilitas bisnis.</p>
+</div><div class="card">
+<h3>Landing Page Jualan</h3>
+<p>Desain fokus konversi untuk meningkatkan penjualan.</p>
+</div><div class="card">
+<h3>Website Custom</h3>
+<p>Fitur sesuai kebutuhan bisnis Anda.</p>
+</div></div></section><!-- ABOUT --><section><div class="about"><div>
+<h2 style="color:#38bdf8">Kenapa Pilih Kami?</h2>
+<p>Kami berpengalaman membuat website modern dengan desain elegan, cepat, dan mobile friendly.</p><p>✔ Desain Premium  
+✔ Loading Cepat  
+✔ SEO Friendly  
+✔ Support Setelah Website Jadi  
+</p></div><img src="assets/images/about.jpg"></div></section><!-- PORTFOLIO --><section id="portfolio"><h2 style="color:#38bdf8">Portfolio</h2><div class="portfolio"><div class="project">
 <img src="assets/images/project1.jpg">
-<div class="overlay">Detail</div>
-</div><div class="project glass" onclick="openModal('Project 2','Desain UI profesional')">
+</div><div class="project">
 <img src="assets/images/project2.jpg">
-<div class="overlay">Detail</div>
-</div><div class="project glass" onclick="openModal('Project 3','Landing page conversion tinggi')">
+</div><div class="project">
 <img src="assets/images/project3.jpg">
-<div class="overlay">Detail</div>
-</div></div></section><!-- TESTIMONI --><section><h2 style="text-align:center;color:#38bdf8">Testimonials</h2><div class="testimonials"><div class="testi glass">
+</div></div></section><!-- PRICING --><section id="pricing"><h2 style="color:#38bdf8">Harga Paket</h2><div class="pricing"><div class="price">
+<h2>Starter</h2>
+<h3>Rp 1.500.000</h3>
+<p>1 Halaman</p>
+<p>Desain Modern</p>
+<p>Mobile Friendly</p>
+<a href="#" class="btn">Pesan</a>
+</div><div class="price">
+<h2>Business</h2>
+<h3>Rp 3.000.000</h3>
+<p>5 Halaman</p>
+<p>SEO Basic</p>
+<p>Revisi 2x</p>
+<a href="#" class="btn">Pesan</a>
+</div><div class="price">
+<h2>Premium</h2>
+<h3>Rp 6.000.000</h3>
+<p>Unlimited Halaman</p>
+<p>Fitur Lengkap</p>
+<p>Support 30 Hari</p>
+<a href="#" class="btn">Pesan</a>
+</div></div></section><!-- TESTIMONIAL --><section><h2 style="color:#38bdf8">Testimonial</h2><div class="grid"><div class="testi">
 ⭐⭐⭐⭐⭐
-<p>Website sangat bagus dan cepat!</p>
-<b>- Client</b>
-</div><div class="testi glass">
+<p>Website sangat profesional dan meningkatkan kepercayaan pelanggan kami.</p>
+<b>— Owner Bisnis</b>
+</div><div class="testi">
 ⭐⭐⭐⭐⭐
-<p>Desain profesional, recommended.</p>
-<b>- Client</b>
-</div></div></section><!-- CONTACT --><section id="contact"><div class="contact glass"><h2 style="text-align:center;color:#38bdf8">Contact</h2><p>Email: <b style="color:#38bdf8">devrius0@gmail.com</b></p>
-<p>WhatsApp: <b style="color:#38bdf8">081338693093</b></p><input type="text" id="nama" placeholder="Nama">
-<textarea id="pesan" placeholder="Pesan"></textarea><button onclick="kirimWA()" class="btn">Kirim WhatsApp</button>
+<p>Pelayanan cepat dan hasil memuaskan.</p>
+<b>— Client</b>
+</div></div></section><!-- CTA --><div class="cta"><h2>Siap Membuat Bisnis Anda Lebih Profesional?</h2>
+<p>Konsultasi gratis sekarang juga</p><a href="https://wa.me/6281338693093" class="btn">Chat WhatsApp</a>
 
-</div></section><footer style="text-align:center;padding:30px">© 2026 Rius Portfolio</footer><!-- MODAL --><div class="modal" id="modal">
-<div class="modal-box">
-<span class="close" onclick="closeModal()">✖</span>
-<h2 id="modal-title"></h2>
-<p id="modal-desc"></p>
-</div>
-</div><script>
-
-/* CURSOR */
-const cursor=document.querySelector(".cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
-
-/* PARTICLES */
-particlesJS("particles",{particles:{number:{value:50},size:{value:3}}});
-
-/* SKILL ANIMATION */
-document.querySelectorAll(".progress").forEach(bar=>{
-let width=bar.dataset.width;
-gsap.to(bar,{width:width,duration:2,scrollTrigger:{trigger:bar,start:"top 90%"}});
-});
-
-/* COUNTER */
-document.querySelectorAll(".counter").forEach(counter=>{
-let target=counter.dataset.target;
-let count=0;
-let update=()=>{
-count++;
-counter.innerText=count;
-if(count<target)requestAnimationFrame(update);
-};
-update();
-});
-
-/* MODAL */
-function openModal(title,desc){
-document.getElementById("modal").style.display="flex";
-document.getElementById("modal-title").innerText=title;
-document.getElementById("modal-desc").innerText=desc;
-}
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
-
-/* WHATSAPP */
-function kirimWA(){
-let nama=document.getElementById("nama").value;
-let pesan=document.getElementById("pesan").value;
-let url=`https://wa.me/6281338693093?text=Halo saya ${nama}, ${pesan}`;
-window.open(url);
-}
-
-</script></body>
+</div><!-- CONTACT --><section id="contact"><div class="contact"><h2 style="color:#38bdf8">Contact</h2><p>Email: devrius@gmail.com</p>
+<p>WhatsApp: 081338693093</p></div></section><footer>
+© 2026 BusinessPro
+</footer></body>
 </html>
