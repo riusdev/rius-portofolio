@@ -2,9 +2,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rius Portfolio - Frontend Developer</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><!-- GSAP --><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><!-- ScrollTrigger --><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><!-- Particles --><script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script><style>
+<title>Rius — Frontend Developer</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script><style>
 
-/* ================= GLOBAL ================= */
+/* ===== GLOBAL ===== */
 *{
 margin:0;
 padding:0;
@@ -17,6 +17,12 @@ body{
 background:#0f172a;
 color:white;
 overflow-x:hidden;
+transition:0.4s;
+}
+
+.light{
+background:#f1f5f9;
+color:#0f172a;
 }
 
 #particles{
@@ -25,7 +31,24 @@ inset:0;
 z-index:-1;
 }
 
-/* ================= NAVBAR ================= */
+/* ===== LOADER ===== */
+.loader{
+position:fixed;
+inset:0;
+background:#020617;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+font-size:22px;
+letter-spacing:3px;
+}
+
+.loader span{
+color:#38bdf8;
+}
+
+/* ===== NAVBAR ===== */
 nav{
 display:flex;
 justify-content:space-between;
@@ -33,7 +56,7 @@ align-items:center;
 padding:20px 10%;
 position:sticky;
 top:0;
-background:rgba(2,6,23,0.9);
+background:rgba(2,6,23,0.7);
 backdrop-filter:blur(10px);
 z-index:1000;
 border-bottom:1px solid rgba(255,255,255,0.1);
@@ -41,38 +64,37 @@ border-bottom:1px solid rgba(255,255,255,0.1);
 
 nav h1{
 color:#38bdf8;
-font-weight:700;
 }
 
 nav a{
 margin-left:25px;
-font-weight:500;
-transition:0.3s;
 color:white;
 text-decoration:none;
+font-weight:500;
 }
 
-nav a:hover{
-color:#38bdf8;
+.toggle{
+cursor:pointer;
+margin-left:20px;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero{
 display:flex;
 align-items:center;
 justify-content:space-between;
 flex-wrap:wrap;
-min-height:90vh;
-padding:50px 10%;
+min-height:100vh;
+padding:60px 10%;
 }
 
 .profile{
-width:230px;
-height:230px;
+width:240px;
+height:240px;
 border-radius:50%;
 border:5px solid #38bdf8;
 object-fit:cover;
-box-shadow:0 0 40px #38bdf8;
+box-shadow:0 0 50px #38bdf8;
 animation:float 4s ease-in-out infinite;
 }
 
@@ -80,12 +102,8 @@ animation:float 4s ease-in-out infinite;
 50%{transform:translateY(-15px);}
 }
 
-.hero-text{
-max-width:500px;
-}
-
 .hero-text h1{
-font-size:42px;
+font-size:45px;
 margin-bottom:20px;
 }
 
@@ -95,8 +113,8 @@ color:#38bdf8;
 
 .hero-text p{
 color:#cbd5e1;
-min-height:30px;
 margin-bottom:20px;
+min-height:30px;
 }
 
 .btn{
@@ -105,20 +123,29 @@ color:black;
 padding:12px 25px;
 border-radius:8px;
 font-weight:600;
+text-decoration:none;
 display:inline-block;
 transition:0.3s;
-text-decoration:none;
 }
 
 .btn:hover{
 transform:scale(1.05);
 }
 
-/* ================= SERVICES ================= */
-section{
-padding:60px 10%;
+/* ===== GLASS CARD ===== */
+.glass{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+border-radius:15px;
 }
 
+/* ===== SECTIONS ===== */
+section{
+padding:70px 10%;
+}
+
+/* ===== SERVICES ===== */
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -127,9 +154,7 @@ margin-top:40px;
 }
 
 .card{
-background:#020617;
 padding:15px;
-border-radius:15px;
 text-align:center;
 transition:0.4s;
 cursor:pointer;
@@ -146,12 +171,11 @@ transform:translateY(-10px) scale(1.05);
 box-shadow:0 0 25px #38bdf8;
 }
 
-/* ================= PORTFOLIO ================= */
+/* ===== PORTFOLIO ===== */
 .portfolio{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
-margin-top:20px;
 }
 
 .project{
@@ -163,7 +187,7 @@ cursor:pointer;
 
 .project img{
 width:100%;
-height:180px;
+height:200px;
 object-fit:cover;
 transition:0.4s;
 }
@@ -181,7 +205,6 @@ align-items:center;
 justify-content:center;
 opacity:0;
 transition:0.3s;
-color:white;
 font-weight:600;
 }
 
@@ -189,14 +212,11 @@ font-weight:600;
 opacity:1;
 }
 
-/* ================= CONTACT ================= */
+/* ===== CONTACT ===== */
 .contact{
 max-width:500px;
 margin:auto;
-background:#020617;
 padding:25px;
-border-radius:12px;
-box-shadow:0 0 20px #38bdf8;
 }
 
 .contact input,.contact textarea{
@@ -205,7 +225,7 @@ padding:12px;
 margin:10px 0;
 border-radius:6px;
 border:none;
-background:#0f172a;
+background:#020617;
 color:white;
 }
 
@@ -215,18 +235,18 @@ color:black;
 padding:12px 25px;
 border-radius:8px;
 font-weight:600;
-cursor:pointer;
 border:none;
+cursor:pointer;
 }
 
-/* ================= FOOTER ================= */
+/* ===== FOOTER ===== */
 footer{
 text-align:center;
 padding:30px;
 color:#94a3b8;
 }
 
-/* ================= MOBILE ================= */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
 .hero{
 flex-direction:column;
@@ -237,48 +257,62 @@ margin-bottom:30px;
 }
 }
 
-</style></head><body><div id="particles"></div><!-- NAVBAR --><nav>
+</style></head><body><div class="loader">Loading <span>Rius</span>...</div>
+<div id="particles"></div><!-- NAVBAR --><nav>
 <h1>Rius</h1>
 <div>
 <a href="#home">Home</a>
 <a href="#services">Services</a>
 <a href="#portfolio">Portfolio</a>
 <a href="#contact">Contact</a>
+<span class="toggle" onclick="toggleMode()">🌙</span>
 </div>
-</nav><!-- HERO --><section id="home" class="hero"><img src="assets/images/rius.jpg" class="profile" alt="Foto Rius"><div class="hero-text">
+</nav><!-- HERO --><section id="home" class="hero"><img src="assets/images/rius.jpg" class="profile"><div class="hero-text">
 <h1>Halo, Saya <span>Rius</span></h1>
 <p id="typing"></p>
 <a href="#contact" class="btn">Hire Me</a>
-</div></section><!-- SERVICES --><section id="services"><h2 style="text-align:center;color:#38bdf8">Services</h2><div class="services"><div class="card">
+</div></section><!-- SERVICES --><section id="services"><h2 style="text-align:center;color:#38bdf8">Services</h2><div class="services"><div class="card glass">
 <img src="assets/images/service-web2.jpeg">
 <h3>Website Development</h3>
 <p>Website modern & responsif</p>
-</div><div class="card">
+</div><div class="card glass">
 <img src="assets/images/service-ui.jpeg">
 <h3>UI/UX Design</h3>
 <p>Desain profesional</p>
-</div><div class="card">
+</div><div class="card glass">
 <img src="assets/images/service-landing.jpeg">
 <h3>Landing Page</h3>
 <p>High conversion landing page</p>
-</div></div></section><!-- PORTFOLIO --><section id="portfolio"><h2 style="text-align:center;color:#38bdf8">Portfolio</h2><div class="portfolio"><div class="project">
+</div></div></section><!-- PORTFOLIO --><section id="portfolio"><h2 style="text-align:center;color:#38bdf8">Portfolio</h2><div class="portfolio"><div class="project glass">
 <img src="assets/images/project1.jpg">
 <div class="overlay">Project 1</div>
-</div><div class="project">
+</div><div class="project glass">
 <img src="assets/images/project2.jpg">
 <div class="overlay">Project 2</div>
-</div><div class="project">
+</div><div class="project glass">
 <img src="assets/images/project3.jpg">
 <div class="overlay">Project 3</div>
-</div></div></section><!-- CONTACT --><section id="contact"><div class="contact"><h2 style="text-align:center;color:#38bdf8">Contact Me</h2><p>Email: <b style="color:#38bdf8">devrius0@gmail.com</b></p>
+</div></div></section><!-- CONTACT --><section id="contact"><div class="contact glass"><h2 style="text-align:center;color:#38bdf8">Contact Me</h2><p>Email: <b style="color:#38bdf8">devrius0@gmail.com</b></p>
 <p>WhatsApp: <b style="color:#38bdf8">081338693093</b></p><input type="text" id="nama" placeholder="Nama">
 <textarea id="pesan" placeholder="Pesan"></textarea><button onclick="kirimWA()">Kirim WhatsApp</button>
 
 </div></section><footer>© 2026 Rius Portfolio</footer><script>
 
-/* Typing Effect */
+/* LOADER */
+window.addEventListener("load",()=>{
+gsap.to(".loader",{opacity:0,duration:1,onComplete:()=>{
+document.querySelector(".loader").style.display="none";
+}});
+});
+
+/* DARK MODE */
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+/* TYPING */
 const text=[
-"Front-End Developer Profesional",
+"Frontend Developer Profesional",
 "Membuat Website Modern & Interaktif",
 "Siap Mengerjakan Project Anda"
 ];
@@ -301,10 +335,9 @@ type();
 },1500);
 }
 }
-
 type();
 
-/* WhatsApp */
+/* WHATSAPP */
 function kirimWA(){
 let nama=document.getElementById("nama").value;
 let pesan=document.getElementById("pesan").value;
@@ -312,7 +345,7 @@ let url=`https://wa.me/6281338693093?text=Halo saya ${nama}, ${pesan}`;
 window.open(url);
 }
 
-/* Particles */
+/* PARTICLES */
 particlesJS("particles", {
 particles:{
 number:{value:50},
@@ -325,29 +358,10 @@ line_linked:{enable:true}
 /* GSAP */
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".profile",{
-duration:1.5,
-y:100,
-opacity:0
-});
-
-gsap.from(".hero-text",{
-duration:1.5,
-x:-100,
-opacity:0,
-delay:0.5
-});
-
-gsap.from(".card",{
-duration:1,
-y:50,
-opacity:0,
-stagger:0.2,
-scrollTrigger:{
-trigger:"#services",
-start:"top 80%"
-}
-});
+gsap.from(".profile",{duration:1.5,y:100,opacity:0});
+gsap.from(".hero-text",{duration:1.5,x:-100,opacity:0,delay:0.5});
+gsap.from(".card",{duration:1,y:50,opacity:0,stagger:0.2,
+scrollTrigger:{trigger:"#services",start:"top 80%"}});
 
 </script></body>
 </html>
