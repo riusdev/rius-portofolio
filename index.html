@@ -1,267 +1,198 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rius | Elite Minimalist Web Developer</title>
 
-<title>Rius | Web Developer untuk Bisnis Profesional</title>
-
-<meta name="description" content="Saya membantu UMKM dan bisnis lokal meningkatkan kredibilitas dan penjualan melalui website modern, profesional, dan berorientasi konversi.">
-<meta name="keywords" content="web developer, jasa website profesional, frontend developer, website UMKM">
-<meta name="author" content="Rius">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#0f0f0f;
-color:#fff;
-line-height:1.7;
-scroll-behavior:smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nav{
-position:fixed;
-width:100%;
-padding:25px 80px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-z-index:1000;
+body {
+  background-color: #0f0f0f;
+  color: #f5f5f5;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
 }
 
-nav h2{
-font-family:'Playfair Display',serif;
-color:gold;
+section {
+  padding: 100px 10%;
 }
 
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
 }
 
-nav ul li a{
-text-decoration:none;
-color:#fff;
-transition:0.3s;
+h1 {
+  font-size: 56px;
+  line-height: 1.2;
 }
 
-nav ul li a:hover{
-color:gold;
+h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
 }
 
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 20px;
-background:linear-gradient(to bottom,#0f0f0f,#111);
+p {
+  color: #bfbfbf;
+  font-size: 18px;
 }
 
-.hero-content{
-max-width:900px;
+.gold-line {
+  width: 60px;
+  height: 2px;
+  background: #c6a85b;
+  margin: 20px 0 40px 0;
 }
 
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:50px;
-color:gold;
-margin-bottom:25px;
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.hero p{
-color:#ccc;
-margin-bottom:35px;
-font-size:18px;
+.hero p {
+  max-width: 500px;
+  margin-top: 20px;
 }
 
-.btn{
-display:inline-block;
-padding:18px 45px;
-background:gold;
-color:#000;
-font-weight:600;
-border-radius:50px;
-text-decoration:none;
-transition:0.4s;
+.btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 28px;
+  border: 1px solid #c6a85b;
+  color: #c6a85b;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.btn:hover{
-background:#fff;
-transform:translateY(-5px);
+.btn:hover {
+  background: #c6a85b;
+  color: #0f0f0f;
 }
 
-section{
-padding:120px 80px;
-max-width:1200px;
-margin:auto;
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
 }
 
-.section-title{
-text-align:center;
-margin-bottom:70px;
+.project-card {
+  border: 1px solid #1c1c1c;
+  padding: 30px;
+  transition: 0.3s;
 }
 
-.section-title h2{
-font-family:'Playfair Display',serif;
-font-size:38px;
-color:gold;
+.project-card:hover {
+  border-color: #c6a85b;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:40px;
+.project-card h3 {
+  margin-bottom: 15px;
 }
 
-.card{
-background:#161616;
-padding:40px;
-border-radius:20px;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-background:#1c1c1c;
-}
-
-.card h3{
-color:gold;
-margin-bottom:15px;
-}
-
-.case{
-margin-bottom:80px;
-}
-
-.case img{
-width:100%;
-border-radius:20px;
-margin-bottom:20px;
-}
-
-.case h3{
-color:gold;
-margin-bottom:10px;
-}
-
-.cta{
-text-align:center;
-padding:120px 40px;
-background:#111;
-}
-
-footer{
-background:#000;
-text-align:center;
-padding:40px;
-color:#777;
-}
-
-@media(max-width:900px){
-nav{padding:20px 30px;}
-section{padding:100px 30px;}
-.hero h1{font-size:34px;}
+.footer {
+  text-align: center;
+  padding: 40px 10%;
+  border-top: 1px solid #1c1c1c;
+  font-size: 14px;
+  color: #777;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<h2>RiusDev</h2>
-<ul>
-<li><a href="#about">Tentang</a></li>
-<li><a href="#services">Layanan</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#contact">Kontak</a></li>
-</ul>
-</nav>
-
+<!-- HERO -->
 <section class="hero">
-<div class="hero-content">
-<h1>Saya Membantu Bisnis Tumbuh Melalui Website Profesional & Berorientasi Konversi</h1>
-<p>Frontend Developer yang fokus membantu UMKM dan bisnis lokal meningkatkan kredibilitas dan penjualan melalui website modern, cepat, dan terpercaya.</p>
-<a href="https://wa.me/6281338693093" target="_blank" class="btn">
-Konsultasi Gratis Sekarang
-</a>
-</div>
+  <h1>I Design Digital Presence <br>For Brands That Refuse To Look Ordinary.</h1>
+  <div class="gold-line"></div>
+  <p>
+    Minimalist. Strategic. Premium.  
+    Crafted to elevate brand perception through precision and powerful simplicity.
+  </p>
+  <a href="#contact" class="btn">Start a Conversation</a>
 </section>
 
-<section id="about">
-<div class="section-title">
-<h2>Tentang Saya</h2>
-</div>
-<p style="text-align:center;max-width:800px;margin:auto;color:#ccc;">
-Saya bukan hanya membuat website, tetapi membantu bisnis membangun kredibilitas digital.
-Setiap project dirancang dengan pendekatan strategi, struktur yang jelas, dan fokus pada hasil.
-</p>
+<!-- ABOUT -->
+<section>
+  <h2>About</h2>
+  <div class="gold-line"></div>
+  <p>
+    I am an Elite Minimalist Web Developer focused on helping brands 
+    elevate their digital presence. My approach blends strategic structure, 
+    clean execution, and subtle luxury aesthetics to create impactful experiences.
+  </p>
 </section>
 
-<section id="services">
-<div class="section-title">
-<h2>Layanan</h2>
-</div>
-<div class="grid">
-<div class="card">
-<h3>Website Company Profile</h3>
-<p>Membangun citra profesional untuk bisnis Anda dengan desain modern dan clean.</p>
-</div>
-<div class="card">
-<h3>Landing Page Konversi</h3>
-<p>Dirancang khusus untuk meningkatkan leads dan penjualan.</p>
-</div>
-<div class="card">
-<h3>Website Portfolio Premium</h3>
-<p>Membantu personal brand tampil profesional dan terpercaya.</p>
-</div>
-</div>
+<!-- SELECTED PROJECTS -->
+<section>
+  <h2>Selected Projects</h2>
+  <div class="gold-line"></div>
+  <div class="projects">
+
+    <div class="project-card">
+      <h3>Luxury Barbershop</h3>
+      <p>
+        Challenge: Elevate brand perception.  
+        Strategy: Minimal dark layout with bold typography.  
+        Outcome: Premium visual presence aligned with target audience.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Personal Brand Consultant</h3>
+      <p>
+        Challenge: Build trust & authority.  
+        Strategy: Structured storytelling and elegant whitespace.  
+        Outcome: Stronger credibility and professional positioning.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Modern Café Website</h3>
+      <p>
+        Challenge: Stand out in competitive local market.  
+        Strategy: Clean interface with luxury tone.  
+        Outcome: Elevated customer perception and digital identity.
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<section id="portfolio">
-<div class="section-title">
-<h2>Studi Kasus Project</h2>
-</div>
-
-<div class="case">
-<img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70" alt="">
-<h3>Barbershop</h3>
-<p>Masalah: Brand terlihat biasa & kurang premium.<br>
-Solusi: Desain ulang dengan konsep modern luxury.<br>
-Hasil: Tampilan profesional & siap meningkatkan kepercayaan pelanggan.</p>
-</div>
-
-<div class="case">
-<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
-<h3>cafe</h3>
-<p>Masalah: Tidak memiliki branding digital.<br>
-Solusi: Website interior premium dengan visual high-end.<br>
-Hasil: Branding lebih kuat & siap menarik klien kelas menengah atas.</p>
-</div>
-
+<!-- SERVICES -->
+<section>
+  <h2>Services</h2>
+  <div class="gold-line"></div>
+  <p><strong>Brand Website</strong> — Designed to elevate credibility.</p>
+  <p><strong>High-Converting Landing Page</strong> — Structured for impact.</p>
+  <p><strong>Website Redesign & Elevation</strong> — Transforming ordinary into premium.</p>
 </section>
 
-<section class="cta" id="contact">
-<h2 style="font-family:Playfair Display;color:gold;margin-bottom:30px;">
-Siap Meningkatkan Branding Digital Bisnis Anda?
-</h2>
-<a href="https://wa.me/6281338693093" target="_blank" class="btn">
-Jadwalkan Konsultasi Gratis
-</a>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Let’s Build Something Exceptional.</h2>
+  <div class="gold-line"></div>
+  <p>
+    If your brand is ready to elevate its digital presence,  
+    let’s start a strategic conversation.
+  </p>
+  <a href="mailto:devrius0@gmail.com" class="btn">Contact Me</a>
 </section>
 
-<footer>
-© 2026 RiusDev. High-Ticket Web Developer.
-</footer>
+<div class="footer">
+  Built for Perception. Designed for Impact. <br>
+  © 2026 Rius
+</div>
 
 </body>
 </html>
