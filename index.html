@@ -15,14 +15,15 @@
 }
 
 body {
-  background-color: #0f0f0f;
+  background: radial-gradient(circle at top right, #1a1a1a, #0f0f0f 60%);
   color: #f5f5f5;
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
 }
 
 section {
-  padding: 100px 10%;
+  padding: 120px 10%;
 }
 
 h1, h2 {
@@ -30,25 +31,27 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 64px;
-  line-height: 1.15;
+  font-size: 68px;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
+  font-size: 38px;
+  margin-bottom: 50px;
 }
 
 p {
   color: #bfbfbf;
   font-size: 18px;
+  max-width: 600px;
 }
 
 .gold-line {
   width: 60px;
   height: 2px;
   background: #c6a85b;
-  margin: 25px 0 40px 0;
+  margin: 30px 0 50px 0;
 }
 
 .hero {
@@ -56,7 +59,7 @@ p {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
-  gap: 60px;
+  gap: 80px;
 }
 
 .hero-left {
@@ -69,49 +72,72 @@ p {
 }
 
 .hero-right img {
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
   filter: grayscale(100%);
   opacity: 0.9;
+  transition: 0.5s ease;
+}
+
+.hero-right img:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.highlight {
+  color: #c6a85b;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 40px;
-  padding: 12px 28px;
+  margin-top: 50px;
+  padding: 14px 32px;
   border: 1px solid #c6a85b;
   color: #c6a85b;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.4s ease;
+  letter-spacing: 1px;
 }
 
 .btn:hover {
   background: #c6a85b;
   color: #0f0f0f;
+  transform: translateY(-2px);
 }
 
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  gap: 60px;
 }
 
 .project-card {
-  border: 1px solid #1c1c1c;
-  padding: 30px;
-  transition: 0.3s;
+  position: relative;
+  border-top: 1px solid #1c1c1c;
+  padding-top: 40px;
+  transition: 0.4s ease;
 }
 
 .project-card:hover {
-  border-color: #c6a85b;
+  transform: translateY(-6px);
+}
+
+.project-number {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 80px;
+  font-family: 'Playfair Display', serif;
+  color: rgba(198,168,91,0.05);
 }
 
 .footer {
   text-align: center;
-  padding: 40px 10%;
+  padding: 60px 10%;
   border-top: 1px solid #1c1c1c;
   font-size: 14px;
   color: #777;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 900px) {
@@ -134,14 +160,14 @@ p {
     <h1>
       I Design Digital Presence <br>
       For Brands That Refuse <br>
-      To Look Ordinary.
+      To Look <span class="highlight">Ordinary.</span>
     </h1>
     <div class="gold-line"></div>
     <p>
-      Minimalist. Strategic. Premium.  
-      Crafted to elevate brand perception through precision and powerful simplicity.
+      Minimalist. Strategic. Premium. Crafted to elevate brand perception 
+      through precision and powerful simplicity.
     </p>
-    <a href="#contact" class="btn">Start a Conversation</a>
+    <a href="#contact" class="btn">START A CONVERSATION</a>
   </div>
 
   <div class="hero-right">
@@ -154,8 +180,8 @@ p {
   <h2>About</h2>
   <div class="gold-line"></div>
   <p>
-    I am an Elite Minimalist Web Developer focused on helping brands elevate 
-    their digital presence through structured, high-end digital experiences.
+    I am an Elite Minimalist Web Developer focused on elevating digital presence 
+    for brands that value perception, clarity, and refined execution.
   </p>
 </section>
 
@@ -163,19 +189,27 @@ p {
 <section>
   <h2>Selected Projects</h2>
   <div class="gold-line"></div>
+
   <div class="projects">
+
     <div class="project-card">
+      <div class="project-number">01</div>
       <h3>Luxury Barbershop</h3>
-      <p>Minimal dark redesign focused on premium perception and strong visual identity.</p>
+      <p>Minimal dark redesign focused on premium perception and bold visual identity.</p>
     </div>
+
     <div class="project-card">
+      <div class="project-number">02</div>
       <h3>Personal Brand Consultant</h3>
-      <p>Strategic layout structure built to increase authority and credibility.</p>
+      <p>Strategic structure built to increase authority and credibility positioning.</p>
     </div>
+
     <div class="project-card">
+      <div class="project-number">03</div>
       <h3>Modern Café</h3>
       <p>Elevated local brand into refined digital experience with minimalist luxury tone.</p>
     </div>
+
   </div>
 </section>
 
@@ -185,13 +219,13 @@ p {
   <div class="gold-line"></div>
   <p>
     If your brand is ready to elevate its digital presence, 
-    let’s start a strategic conversation.
+    let’s begin a strategic collaboration.
   </p>
-  <a href="mailto:devrius0@gmail.com" class="btn">Contact Me</a>
+  <a href="mailto:devrius@gmail.com" class="btn">CONTACT ME</a>
 </section>
 
 <div class="footer">
-  Built for Perception. Designed for Impact. <br>
+  Built for Perception. Designed for Impact. <br><br>
   © 2026 Rius 
 </div>
 
