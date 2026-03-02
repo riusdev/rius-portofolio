@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rius | Elite Minimalist Web Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -27,12 +27,11 @@ section {
 
 h1, h2 {
   font-family: 'Playfair Display', serif;
-  font-weight: 600;
 }
 
 h1 {
-  font-size: 56px;
-  line-height: 1.2;
+  font-size: 64px;
+  line-height: 1.15;
 }
 
 h2 {
@@ -49,19 +48,31 @@ p {
   width: 60px;
   height: 2px;
   background: #c6a85b;
-  margin: 20px 0 40px 0;
+  margin: 25px 0 40px 0;
 }
 
 .hero {
-  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  gap: 60px;
 }
 
-.hero p {
-  max-width: 500px;
-  margin-top: 20px;
+.hero-left {
+  flex: 1;
+}
+
+.hero-right {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-right img {
+  max-width: 400px;
+  width: 100%;
+  filter: grayscale(100%);
+  opacity: 0.9;
 }
 
 .btn {
@@ -95,16 +106,22 @@ p {
   border-color: #c6a85b;
 }
 
-.project-card h3 {
-  margin-bottom: 15px;
-}
-
 .footer {
   text-align: center;
   padding: 40px 10%;
   border-top: 1px solid #1c1c1c;
   font-size: 14px;
   color: #777;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-right {
+    text-align: center;
+  }
 }
 </style>
 </head>
@@ -113,13 +130,23 @@ p {
 
 <!-- HERO -->
 <section class="hero">
-  <h1>I Design Digital Presence <br>For Brands That Refuse To Look Ordinary.</h1>
-  <div class="gold-line"></div>
-  <p>
-    Minimalist. Strategic. Premium.  
-    Crafted to elevate brand perception through precision and powerful simplicity.
-  </p>
-  <a href="#contact" class="btn">Start a Conversation</a>
+  <div class="hero-left">
+    <h1>
+      I Design Digital Presence <br>
+      For Brands That Refuse <br>
+      To Look Ordinary.
+    </h1>
+    <div class="gold-line"></div>
+    <p>
+      Minimalist. Strategic. Premium.  
+      Crafted to elevate brand perception through precision and powerful simplicity.
+    </p>
+    <a href="#contact" class="btn">Start a Conversation</a>
+  </div>
+
+  <div class="hero-right">
+    <img src="assets/images/domrhyuz.jpg" alt="Rius">
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -127,55 +154,29 @@ p {
   <h2>About</h2>
   <div class="gold-line"></div>
   <p>
-    I am an Elite Minimalist Web Developer focused on helping brands 
-    elevate their digital presence. My approach blends strategic structure, 
-    clean execution, and subtle luxury aesthetics to create impactful experiences.
+    I am an Elite Minimalist Web Developer focused on helping brands elevate 
+    their digital presence through structured, high-end digital experiences.
   </p>
 </section>
 
-<!-- SELECTED PROJECTS -->
+<!-- PROJECTS -->
 <section>
   <h2>Selected Projects</h2>
   <div class="gold-line"></div>
   <div class="projects">
-
     <div class="project-card">
       <h3>Luxury Barbershop</h3>
-      <p>
-        Challenge: Elevate brand perception.  
-        Strategy: Minimal dark layout with bold typography.  
-        Outcome: Premium visual presence aligned with target audience.
-      </p>
+      <p>Minimal dark redesign focused on premium perception and strong visual identity.</p>
     </div>
-
     <div class="project-card">
       <h3>Personal Brand Consultant</h3>
-      <p>
-        Challenge: Build trust & authority.  
-        Strategy: Structured storytelling and elegant whitespace.  
-        Outcome: Stronger credibility and professional positioning.
-      </p>
+      <p>Strategic layout structure built to increase authority and credibility.</p>
     </div>
-
     <div class="project-card">
-      <h3>Modern Café Website</h3>
-      <p>
-        Challenge: Stand out in competitive local market.  
-        Strategy: Clean interface with luxury tone.  
-        Outcome: Elevated customer perception and digital identity.
-      </p>
+      <h3>Modern Café</h3>
+      <p>Elevated local brand into refined digital experience with minimalist luxury tone.</p>
     </div>
-
   </div>
-</section>
-
-<!-- SERVICES -->
-<section>
-  <h2>Services</h2>
-  <div class="gold-line"></div>
-  <p><strong>Brand Website</strong> — Designed to elevate credibility.</p>
-  <p><strong>High-Converting Landing Page</strong> — Structured for impact.</p>
-  <p><strong>Website Redesign & Elevation</strong> — Transforming ordinary into premium.</p>
 </section>
 
 <!-- CONTACT -->
@@ -183,7 +184,7 @@ p {
   <h2>Let’s Build Something Exceptional.</h2>
   <div class="gold-line"></div>
   <p>
-    If your brand is ready to elevate its digital presence,  
+    If your brand is ready to elevate its digital presence, 
     let’s start a strategic conversation.
   </p>
   <a href="mailto:devrius0@gmail.com" class="btn">Contact Me</a>
@@ -191,7 +192,7 @@ p {
 
 <div class="footer">
   Built for Perception. Designed for Impact. <br>
-  © 2026 Rius
+  © 2026 Rius 
 </div>
 
 </body>
