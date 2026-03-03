@@ -1,233 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rius | Elite Minimalist Web Developer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+<title>Rius - Web Developer & UI/UX Enthusiast</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: radial-gradient(circle at top right, #1a1a1a, #0f0f0f 60%);
-  color: #f5f5f5;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.7;
-  letter-spacing: 0.3px;
-}
-
-section {
-  padding: 120px 10%;
-}
-
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-}
-
-h1 {
-  font-size: 68px;
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-
-h2 {
-  font-size: 38px;
-  margin-bottom: 50px;
-}
-
-p {
-  color: #bfbfbf;
-  font-size: 18px;
-  max-width: 600px;
-}
-
-.gold-line {
-  width: 60px;
-  height: 2px;
-  background: #c6a85b;
-  margin: 30px 0 50px 0;
-}
-
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 100vh;
-  gap: 80px;
-}
-
-.hero-left {
-  flex: 1;
-}
-
-.hero-right {
-  flex: 1;
-  text-align: right;
-}
-
-.hero-right img {
-  max-width: 420px;
-  width: 100%;
-  filter: grayscale(100%);
-  opacity: 0.9;
-  transition: 0.5s ease;
-}
-
-.hero-right img:hover {
-  opacity: 1;
-  transform: scale(1.02);
-}
-
-.highlight {
-  color: #c6a85b;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 50px;
-  padding: 14px 32px;
-  border: 1px solid #c6a85b;
-  color: #c6a85b;
-  text-decoration: none;
-  transition: 0.4s ease;
-  letter-spacing: 1px;
-}
-
-.btn:hover {
-  background: #c6a85b;
-  color: #0f0f0f;
-  transform: translateY(-2px);
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 60px;
-}
-
-.project-card {
-  position: relative;
-  border-top: 1px solid #1c1c1c;
-  padding-top: 40px;
-  transition: 0.4s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-}
-
-.project-number {
-  position: absolute;
-  top: -20px;
-  left: 0;
-  font-size: 80px;
-  font-family: 'Playfair Display', serif;
-  color: rgba(198,168,91,0.05);
-}
-
-.footer {
-  text-align: center;
-  padding: 60px 10%;
-  border-top: 1px solid #1c1c1c;
-  font-size: 14px;
-  color: #777;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-right {
-    text-align: center;
-  }
-}
+/* ===== Global ===== */
+body{margin:0;font-family:'Arial',sans-serif;color:#1f2937;background:#f8fafc;line-height:1.6;scroll-behavior:smooth;}
+a{text-decoration:none;color:inherit;transition:0.3s;}
+h1,h2,h3,h4{margin:0;padding:0;}
+section{padding:60px 20px;opacity:0;transform:translateY(30px);transition:all 0.8s ease-out;}
+section.visible{opacity:1;transform:translateY(0);}
+.container{max-width:1200px;margin:0 auto;}
+header{background:#0f172a;color:#fff;text-align:center;padding:140px 20px 80px;position:relative;}
+header h1{font-size:3.5rem;font-weight:700;letter-spacing:1px;margin-bottom:20px;}
+header p{font-size:1.3rem;margin-bottom:30px;}
+.cta-btn{background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;padding:14px 32px;border-radius:12px;font-weight:700;transition:0.4s;}
+.cta-btn:hover{transform:scale(1.05);box-shadow:0 12px 20px rgba(0,0,0,0.3);}
+#about{background:#f8fafc;}
+#about .about-grid{display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:center;}
+#about img{width:100%;border-radius:16px;object-fit:cover;transition:0.4s;}
+#about img:hover{transform:scale(1.03);box-shadow:0 8px 30px rgba(0,0,0,0.15);}
+#about h2{font-size:2.5rem;margin-bottom:20px;font-weight:700;color:#0f172a;}
+#about ul{list-style:none;padding:0;}
+#about ul li{margin-bottom:10px;font-size:1rem;}
+#projects h2{text-align:center;margin-bottom:50px;font-size:2.5rem;font-weight:700;color:#0f172a;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;}
+.project-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.1);transition:0.5s;transform:translateY(20px);opacity:0;}
+.project-card.visible{transform:translateY(0);opacity:1;}
+.project-card img{width:100%;height:200px;object-fit:cover;transition:0.4s;}
+.project-card img:hover{transform:scale(1.05);}
+.project-card .project-info{padding:24px;}
+.project-card h3{margin-bottom:12px;font-size:1.3rem;font-weight:700;color:#0f172a;}
+.project-card p{font-size:0.95rem;margin-bottom:8px;color:#4b5563;}
+.project-card a{color:#6366f1;font-weight:700;margin-right:12px;}
+.project-card a:hover{color:#4f46e5;}
+#testimonials{background:#fff;}
+#testimonials h2{text-align:center;margin-bottom:50px;font-size:2.5rem;font-weight:700;color:#0f172a;}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.testimonial-card{background:#f3f4f6;padding:24px;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,0.08);font-style:italic;transform:translateY(20px);opacity:0;transition:0.6s;}
+.testimonial-card.visible{transform:translateY(0);opacity:1;}
+.testimonial-card h4{margin-top:12px;font-weight:700;color:#0f172a;font-style:normal;text-align:right;}
+#contact{background:#0f172a;color:#fff;text-align:center;}
+#contact h2{font-size:2.5rem;margin-bottom:20px;font-weight:700;}
+#contact p{margin-bottom:30px;font-size:1.1rem;}
+#contact a{display:inline-block;margin:5px 12px;color:#fff;font-size:1.2rem;}
+#contact a:hover{color:#6366f1;}
+#contact .cta-btn{margin-top:20px;}
+footer{text-align:center;padding:24px;background:#1e293b;color:#fff;font-size:0.9rem;}
+.whatsapp-float{position:fixed;bottom:24px;right:24px;background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;justify-content:center;align-items:center;font-size:2rem;z-index:100;box-shadow:0 6px 15px rgba(0,0,0,0.2);transition:0.3s;}
+.whatsapp-float:hover{transform:scale(1.1);}
+@media(max-width:768px){#about .about-grid{grid-template-columns:1fr;}header h1{font-size:2.5rem;}header p{font-size:1rem;}}
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <h1>
-      I Design Digital Presence <br>
-      For Brands That Refuse <br>
-      To Look <span class="highlight">Ordinary.</span>
-    </h1>
-    <div class="gold-line"></div>
-    <p>
-      Minimalist. Strategic. Premium. Crafted to elevate brand perception 
-      through precision and powerful simplicity.
-    </p>
-    <a href="#contact" class="btn">START A CONVERSATION</a>
-  </div>
-
-  <div class="hero-right">
-    <img src="assets/images/domrhyuz.jpg" alt="Rius">
-  </div>
-</section>
+<header>
+<h1>Rius</h1>
+<p>Web Developer & UI/UX Enthusiast | Minimalist Elit + Aura Luxury Bold</p>
+<a href="#contact" class="cta-btn">Let’s Build Something Exceptional</a>
+</header>
 
 <!-- ABOUT -->
-<section>
-  <h2>About</h2>
-  <div class="gold-line"></div>
-  <p>
-    I am an Elite Minimalist Web Developer focused on elevating digital presence 
-    for brands that value perception, clarity, and refined execution.
-  </p>
+<section id="about">
+<div class="container about-grid">
+<img src="assets/img/domrhyuz.jpg" alt="Foto Rius">
+<div>
+<h2>Tentang Saya</h2>
+<p>Halo! Saya Rius, lulusan Universitas Komputama. Fokus saya di Web Development dan UI/UX Design, menciptakan pengalaman digital estetis, responsif, dan profesional. Passion saya adalah membangun solusi digital yang meningkatkan nilai bisnis klien.</p>
+<ul>
+<li><strong>Keahlian:</strong> HTML, CSS, JavaScript, React.js, Tailwind CSS, Git & GitHub</li>
+<li><strong>Pengalaman:</strong> Proyek personal & klien skala kecil hingga menengah</li>
+<li><strong>Aspirasi:</strong> Menjadi developer profesional dengan portofolio elit dan kreatif</li>
+</ul>
+</div>
+</div>
 </section>
 
 <!-- PROJECTS -->
-<section>
-  <h2>Selected Projects</h2>
-  <div class="gold-line"></div>
+<section id="projects">
+<div class="container">
+<h2>Selected Projects</h2>
+<div class="projects-grid">
 
-  <div class="projects">
-
-    <div class="project-card">
-      <div class="project-number">01</div>
-      <h3>Luxury Barbershop</h3>
-      <p>Minimal dark redesign focused on premium perception and bold visual identity.</p>
+  <!-- Project 1 -->
+  <div class="project-card">
+    <img src="assets/img/project1.jpg" alt="Business Landing Page">
+    <div class="project-info">
+      <h3>Business Landing Page</h3>
+      <p>Landing page untuk boutique minimalis, menampilkan produk dan brand story.</p>
+      <p><strong>Teknologi:</strong> HTML, CSS, JS, Tailwind</p>
+      <p><strong>Peran:</strong> Designer & Developer</p>
+      <a href="#" target="_blank">Demo Live</a>
+      <a href="#" target="_blank">GitHub Repo</a>
     </div>
-
-    <div class="project-card">
-      <div class="project-number">02</div>
-      <h3>Personal Brand Consultant</h3>
-      <p>Strategic structure built to increase authority and credibility positioning.</p>
-    </div>
-
-    <div class="project-card">
-      <div class="project-number">03</div>
-      <h3>Modern Café</h3>
-      <p>Elevated local brand into refined digital experience with minimalist luxury tone.</p>
-    </div>
-
   </div>
+
+  <!-- Project 2 -->
+  <div class="project-card">
+    <img src="assets/img/project2.jpg" alt="Mini Web App">
+    <div class="project-info">
+      <h3>Mini Web App - To-do List</h3>
+      <p>Aplikasi interaktif untuk manajemen tugas harian dengan fitur tambah, hapus, dan filter.</p>
+      <p><strong>Teknologi:</strong> HTML, CSS, JS</p>
+      <p><strong>Peran:</strong> Fullstack Developer</p>
+      <a href="#" target="_blank">Demo Live</a>
+      <a href="#" target="_blank">GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project-card">
+    <img src="assets/img/project3.jpg" alt="Dashboard Analitik">
+    <div class="project-info">
+      <h3>Dashboard Analitik</h3>
+      <p>Dashboard penjualan interaktif menampilkan data grafik, filter, dan responsive UI.</p>
+      <p><strong>Teknologi:</strong> HTML, CSS, JS, Chart.js</p>
+      <p><strong>Peran:</strong> Frontend Developer</p>
+      <a href="#" target="_blank">Demo Live</a>
+      <a href="#" target="_blank">GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Project 4 -->
+  <div class="project-card">
+    <img src="assets/img/project4.jpg" alt="Mini E-commerce">
+    <div class="project-info">
+      <h3>Mini E-commerce Website</h3>
+      <p>Website toko online kecil menampilkan produk, keranjang belanja, dan checkout flow sederhana.</p>
+      <p><strong>Teknologi:</strong> HTML, CSS, JS, Tailwind</p>
+      <p><strong>Peran:</strong> Fullstack Developer & UI Designer</p>
+      <a href="#" target="_blank">Demo Live</a>
+      <a href="#" target="_blank">GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Project 5 -->
+  <div class="project-card">
+    <img src="assets/img/project5.jpg" alt="UX Case Study">
+    <div class="project-info">
+      <h3>UX Case Study (Fiktif)</h3>
+      <p>Redesign halaman utama website startup untuk meningkatkan user experience & visual appeal.</p>
+      <p><strong>Teknologi:</strong> HTML, CSS, Figma / Adobe XD</p>
+      <p><strong>Peran:</strong> UX Designer & Frontend Developer</p>
+      <a href="#" target="_blank">Preview Mockup</a>
+      <a href="#" target="_blank">Case Study Repo</a>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+<div class="container">
+<h2>Testimoni Klien</h2>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<p>"Rius sangat profesional dan cepat memahami kebutuhan kami. Website cafe kami sekarang lebih menarik dan mudah diakses."</p>
+<h4>- Budi, Owner Cafe Aroma</h4>
+</div>
+<div class="testimonial-card">
+<p>"Portofolio Rius menunjukkan skill yang solid. Sangat puas dengan hasil kerja mini kasir online untuk usaha kami."</p>
+<h4>- Sari, Pengusaha Retail</h4>
+</div>
+</div>
+</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Let’s Build Something Exceptional.</h2>
-  <div class="gold-line"></div>
-  <p>
-    If your brand is ready to elevate its digital presence, 
-    let’s begin a strategic collaboration.
-  </p>
-  <a href="mailto:devrius@gmail.com" class="btn">CONTACT ME</a>
+<div class="container">
+<h2>Hubungi Saya</h2>
+<p>Ingin bekerja sama atau membangun proyek bersama? Hubungi saya sekarang!</p>
+<a href="mailto:devrius0@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+<a href="https://www.linkedin.com/in/rius" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://github.com/riusdev" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+<br><br>
+<a href="CV.pdf" class="cta-btn">Download CV</a>
+</div>
 </section>
 
-<div class="footer">
-  Built for Perception. Designed for Impact. <br><br>
-  © 2026 Rius 
-</div>
+<a href="https://wa.me/6281338693093" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<footer>
+&copy; 2026 Rius. All rights reserved.
+</footer>
+
+<script>
+const sections=document.querySelectorAll('section');
+const projectCards=document.querySelectorAll('.project-card');
+const testimonialCards=document.querySelectorAll('.testimonial-card');
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}})},{threshold:0.15});
+sections.forEach(sec=>observer.observe(sec));
+projectCards.forEach(card=>observer.observe(card));
+testimonialCards.forEach(card=>observer.observe(card));
+</script>
 
 </body>
 </html>
