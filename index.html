@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rius Dev — Digital Architect</title>
+<title>Rius Dev — Digital Perception Strategist</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-  --bg:#0b0f14;
-  --text:#e8edf2;
-  --muted:#88919e;
-  --accent:#5f7c8a;
-  --soft-line:rgba(255,255,255,0.06);
+  --bg:#0f1720;
+  --soft:#1a2430;
+  --text:#e6edf3;
+  --muted:#8fa3b8;
+  --accent:#5f7f99; /* desaturated steel blue */
 }
 
 *{
@@ -23,243 +23,176 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
+  font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
-  font-family:'Inter', sans-serif;
-  line-height:1.85;
-  letter-spacing:.4px;
+  line-height:1.8;
+  letter-spacing:0.3px;
 }
 
 .container{
-  width:86%;
-  max-width:820px;
+  width:90%;
+  max-width:1100px;
   margin:auto;
 }
 
 section{
-  padding:160px 0;
-  border-bottom:1px solid var(--soft-line);
+  padding:140px 0;
 }
 
-h1,h2{
-  font-family:'Playfair Display', serif;
-  font-weight:600;
-  letter-spacing:.5px;
+h1,h2,h3{
+  font-weight:500;
+  letter-spacing:-1px;
 }
 
 h1{
-  font-size:3.2rem;
-  line-height:1.15;
-  margin-bottom:40px;
+  font-size:76px;
+  line-height:1.1;
 }
 
 h2{
-  font-size:1.9rem;
+  font-size:38px;
   margin-bottom:40px;
 }
 
 p{
+  font-size:16px;
   color:var(--muted);
-  margin-bottom:28px;
-  font-size:1.05rem;
-}
-
-small{
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:.75rem;
-  color:var(--accent);
-}
-
-.accent{
-  color:var(--accent);
+  max-width:600px;
 }
 
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
+  padding:200px 0;
 }
 
-.statement{
-  font-size:1.25rem;
+.hero p{
+  margin-top:30px;
+  font-size:20px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:50px;
+  padding:14px 32px;
+  border:1px solid var(--accent);
   color:var(--text);
-  max-width:620px;
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:1px;
+  transition:0.4s ease;
+}
+
+.btn:hover{
+  background:var(--accent);
+  color:#fff;
 }
 
 .divider{
-  width:50px;
   height:1px;
-  background:var(--accent);
-  margin:50px 0;
-  opacity:.6;
+  background:rgba(255,255,255,0.05);
+  margin:100px 0;
 }
 
 .case{
-  margin-top:60px;
-  padding-left:20px;
-  border-left:1px solid var(--soft-line);
+  margin-bottom:100px;
 }
 
-.case strong{
-  color:var(--text);
-  display:block;
-  margin-bottom:8px;
-  font-weight:500;
+.case h3{
+  font-size:26px;
+  margin-bottom:20px;
 }
 
-.subtle-link{
+.label{
+  font-size:13px;
+  letter-spacing:1px;
   color:var(--accent);
-  text-decoration:none;
-  position:relative;
-  transition:.4s;
-}
-
-.subtle-link::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-4px;
-  width:0%;
-  height:1px;
-  background:var(--accent);
-  transition:.6s;
-}
-
-.subtle-link:hover{
-  opacity:.8;
-}
-
-.subtle-link:hover::after{
-  width:100%;
+  text-transform:uppercase;
+  margin-bottom:10px;
 }
 
 .footer{
-  padding:80px 0;
+  padding:120px 0;
   text-align:center;
-  font-size:.85rem;
-  color:var(--muted);
+  background:var(--soft);
 }
 
-/* Motion */
-.fade{
-  opacity:0;
-  transform:translateY(30px);
-  transition:opacity 1.4s ease, transform 1.4s ease;
-}
-
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* Responsive */
-@media(max-width:768px){
-  section{
-    padding:120px 0;
-  }
-  h1{
-    font-size:2.3rem;
-  }
+.footer p{
+  margin:auto;
 }
 
 </style>
 </head>
+
 <body>
 
-<section class="hero fade">
+<section class="hero">
   <div class="container">
-    <small>Rius Dev</small>
     <h1>
-      I design digital spaces<br>
-      that shape perception<br>
-      and build quiet authority.
+      I design digital presence<br>
+      with psychological precision.
     </h1>
-    <div class="divider"></div>
-    <p class="statement">
-      Saya merancang ruang digital sebagai representasi brand —
-      membangun persepsi dengan struktur, kedalaman, dan presisi visual
-      yang bekerja sebelum kata-kata dibaca.
+    <p>
+      Calm. Structured. Perceptive.<br>
+      Built for brands that value authority over noise.
+    </p>
+    <a href="#work" class="btn">View Strategic Work</a>
+  </div>
+</section>
+
+<section id="philosophy">
+  <div class="container">
+    <h2>Authority is constructed, not decorated.</h2>
+    <p>
+      I approach frontend development as perception architecture.
+      Every layout decision, every spacing rhythm, every typographic contrast
+      is intentionally structured to influence how a brand is felt —
+      before it is even understood.
     </p>
   </div>
 </section>
 
-<section class="fade">
-  <div class="container">
-    <h2>Philosophy</h2>
-    <p>
-      Website bukan alat promosi. Ia adalah ruang psikologis.
-      Dalam lima detik pertama, persepsi sudah terbentuk.
-    </p>
-    <p>
-      Tipografi adalah nada suara.
-      Spacing adalah ritme berpikir.
-      Kontras adalah penegasan posisi.
-    </p>
-  </div>
-</section>
+<div class="divider"></div>
 
-<section class="fade">
+<section id="work">
   <div class="container">
-    <h2>Selected Work</h2>
-    <p>
-      Setiap proyek dimulai dengan definisi persepsi yang ingin dibangun.
-    </p>
+    <h2>Selected Strategic Work</h2>
 
     <div class="case">
-      <strong class="accent">Luxury Barbershop</strong>
-      <p><strong>Perception Goal:</strong> Authority & Exclusivity</p>
-      <p><strong>Strategic Move:</strong> Reduced visual noise, elevated typography scale, dark contrast dominance.</p>
-      <p><strong>Result:</strong> Brand presence felt stronger and more refined.</p>
+      <div class="label">Executive Leadership Brand</div>
+      <h3>Elevating Executive Gravitas</h3>
+      <p>
+        Perception Goal — Authority & composure.<br>
+        Strategic Move — Reduced visual noise. Elevated typographic hierarchy. Structured message flow.<br>
+        Psychological Outcome — A more deliberate, controlled digital presence.
+      </p>
     </div>
 
     <div class="case">
-      <strong class="accent">Personal Brand Consultant</strong>
-      <p><strong>Perception Goal:</strong> Intellectual Clarity</p>
-      <p><strong>Strategic Move:</strong> Structured layout rhythm, controlled accent usage, clean hierarchy.</p>
-      <p><strong>Result:</strong> Authority communicated without visual aggression.</p>
+      <div class="label">Premium Service Brand</div>
+      <h3>Minimalism with Strategic Depth</h3>
+      <p>
+        Perception Goal — Trust & exclusivity.<br>
+        Strategic Move — Generous spacing. Restrained palette. Precise vertical rhythm.<br>
+        Psychological Outcome — Elevated brand confidence without visual excess.
+      </p>
     </div>
 
   </div>
 </section>
 
-<section class="fade">
+<div class="divider"></div>
+
+<section class="footer">
   <div class="container">
-    <h2>Invitation</h2>
+    <h2>Presence defines perception.</h2>
     <p>
-      If your brand values depth over noise,
-      and positioning over decoration —
+      If your brand requires clarity, structure, and controlled authority,
+      we can begin a deliberate conversation.
     </p>
-    <p>
-      <a href="mailto:devrius0@gmail.com" class="subtle-link">
-        Let’s begin a deliberate conversation.
-      </a>
-    </p>
+    <a href="#" class="btn">Request Private Conversation</a>
   </div>
 </section>
-
-<div class="footer">
-  © 2026 Rius Dev — Digital Architect of Perception
-</div>
-
-<script>
-const faders = document.querySelectorAll('.fade');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-},{ threshold:0.2 });
-
-faders.forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
