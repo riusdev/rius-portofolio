@@ -3,266 +3,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rius - Web Developer & UI/UX Enthusiast</title>
+<title>Rius | Web Developer</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-/* ===== Global ===== */
-body{margin:0;font-family:'Arial',sans-serif;color:#1f2937;background:#f8fafc;line-height:1.6;scroll-behavior:smooth;}
-a{text-decoration:none;color:inherit;transition:0.3s;}
-h1,h2,h3,h4{margin:0;padding:0;}
-section{padding:60px 20px;opacity:0;transform:translateY(30px);transition:all 0.8s ease-out;}
-section.visible{opacity:1;transform:translateY(0);}
-.container{max-width:1200px;margin:0 auto;}
-header{background:#0f172a;color:#fff;text-align:center;padding:140px 20px 80px;position:relative;}
-header h1{font-size:3.5rem;font-weight:700;letter-spacing:1px;margin-bottom:20px;}
-header p{font-size:1.3rem;margin-bottom:30px;}
-.cta-btn{background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;padding:14px 32px;border-radius:12px;font-weight:700;transition:0.4s;}
-.cta-btn:hover{transform:scale(1.05);box-shadow:0 12px 20px rgba(0,0,0,0.3);}
-#about{background:#f8fafc;}
-#about .about-grid{display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:center;}
-#about img{width:100%;border-radius:16px;object-fit:cover;transition:0.4s;}
-#about img:hover{transform:scale(1.03);box-shadow:0 8px 30px rgba(0,0,0,0.15);}
-#about h2{font-size:2.5rem;margin-bottom:20px;font-weight:700;color:#0f172a;}
-#about ul{list-style:none;padding:0;}
-#about ul li{margin-bottom:10px;font-size:1rem;}
-#projects h2{text-align:center;margin-bottom:50px;font-size:2.5rem;font-weight:700;color:#0f172a;}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;}
-.project-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.1);transition:0.5s;transform:translateY(20px);opacity:0;}
-.project-card.visible{transform:translateY(0);opacity:1;}
-.project-card img{width:100%;height:200px;object-fit:cover;transition:0.4s;}
-.project-card img:hover{transform:scale(1.05);}
-.project-card .project-info{padding:24px;}
-.project-card h3{margin-bottom:12px;font-size:1.3rem;font-weight:700;color:#0f172a;}
-.project-card p{font-size:0.95rem;margin-bottom:8px;color:#4b5563;}
-.project-card a{color:#6366f1;font-weight:700;margin-right:12px;}
-.project-card a:hover{color:#4f46e5;}
-#testimonials{background:#fff;}
-#testimonials h2{text-align:center;margin-bottom:50px;font-size:2.5rem;font-weight:700;color:#0f172a;}
-.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
-.testimonial-card{background:#f3f4f6;padding:24px;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,0.08);font-style:italic;transform:translateY(20px);opacity:0;transition:0.6s;}
-.testimonial-card.visible{transform:translateY(0);opacity:1;}
-.testimonial-card h4{margin-top:12px;font-weight:700;color:#0f172a;font-style:normal;text-align:right;}
-#contact{background:#0f172a;color:#fff;text-align:center;}
-#contact h2{font-size:2.5rem;margin-bottom:20px;font-weight:700;}
-#contact p{margin-bottom:30px;font-size:1.1rem;}
-#contact a{display:inline-block;margin:5px 12px;color:#fff;font-size:1.2rem;}
-#contact a:hover{color:#6366f1;}
-#contact .cta-btn{margin-top:20px;}
-footer{text-align:center;padding:24px;background:#1e293b;color:#fff;font-size:0.9rem;}
-.whatsapp-float{position:fixed;bottom:24px;right:24px;background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;justify-content:center;align-items:center;font-size:2rem;z-index:100;box-shadow:0 6px 15px rgba(0,0,0,0.2);transition:0.3s;}
-.whatsapp-float:hover{transform:scale(1.1);}
-@media(max-width:768px){#about .about-grid{grid-template-columns:1fr;}header h1{font-size:2.5rem;}header p{font-size:1rem;}}
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f8fafc;
+color:#1f2937;
+scroll-behavior:smooth;
+}
+
+section{
+padding:80px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+header{
+background:#0f172a;
+color:#fff;
+text-align:center;
+padding:140px 20px 100px;
+}
+
+header h1{
+font-size:3.2rem;
+margin-bottom:20px;
+}
+
+header p{
+font-size:1.2rem;
+opacity:0.9;
+}
+
+.cta{
+display:inline-block;
+margin-top:30px;
+background:linear-gradient(135deg,#6366f1,#4f46e5);
+color:#fff;
+padding:14px 32px;
+border-radius:10px;
+font-weight:bold;
+transition:0.4s;
+}
+
+.cta:hover{
+transform:scale(1.05);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* ABOUT */
+#about{
+background:#fff;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:40px;
+align-items:center;
+}
+
+.about-grid img{
+width:100%;
+border-radius:16px;
+}
+
+/* PROJECT */
+#projects h2{
+text-align:center;
+margin-bottom:60px;
+font-size:2.4rem;
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+.project-card{
+background:#fff;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
+transition:0.4s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+}
+
+/* CAROUSEL */
+.carousel{
+position:relative;
+overflow:hidden;
+height:220px;
+}
+
+.carousel img{
+position:absolute;
+width:100%;
+height:220px;
+object-fit:cover;
+opacity:0;
+transition:opacity 0.6s ease;
+}
+
+.carousel img.active{
+opacity:1;
+}
+
+.carousel img:hover{
+transform:scale(1.05);
+transition:transform 0.6s ease;
+}
+
+.prev, .next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.4);
+color:#fff;
+border:none;
+padding:8px 12px;
+cursor:pointer;
+border-radius:50%;
+}
+
+.prev{left:10px;}
+.next{right:10px;}
+
+.dots{
+text-align:center;
+position:absolute;
+bottom:10px;
+width:100%;
+}
+
+.dots span{
+display:inline-block;
+width:8px;
+height:8px;
+background:#ddd;
+margin:0 4px;
+border-radius:50%;
+cursor:pointer;
+}
+
+.dots span.active{
+background:#6366f1;
+}
+
+.project-info{
+padding:20px;
+}
+
+.project-info h3{
+margin-bottom:10px;
+}
+
+.project-info p{
+font-size:0.9rem;
+margin-bottom:6px;
+}
+
+footer{
+background:#0f172a;
+color:#fff;
+text-align:center;
+padding:30px;
+margin-top:60px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:24px;
+right:24px;
+background:#25d366;
+color:#fff;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media(max-width:768px){
+.about-grid{
+grid-template-columns:1fr;
+}
+header h1{
+font-size:2.2rem;
+}
+}
 </style>
 </head>
+
 <body>
 
 <header>
 <h1>Rius</h1>
-<p>Web Developer & UI/UX Enthusiast | Minimalist Elit + Aura Luxury Bold</p>
-<a href="#contact" class="cta-btn">Let’s Build Something Exceptional</a>
+<p>Minimalist Elit + Luxury Bold Web Experience</p>
+<a href="#projects" class="cta">View My Projects</a>
 </header>
 
-<!-- ABOUT -->
 <section id="about">
 <div class="container about-grid">
-<img src="assets/images/domrhyuz.jpg" alt="Foto Rius">
+<img src="assets/images/domrhyuz.jpg">
 <div>
 <h2>Tentang Saya</h2>
-<p>Halo! Saya Rius, lulusan Universitas Komputama. Fokus saya di Web Development dan UI/UX Design, menciptakan pengalaman digital estetis, responsif, dan profesional. Passion saya adalah membangun solusi digital yang meningkatkan nilai bisnis klien.</p>
-<ul>
-<li><strong>Keahlian:</strong> HTML, CSS, JavaScript, React.js, Tailwind CSS, Git & GitHub</li>
-<li><strong>Pengalaman:</strong> Proyek personal & klien skala kecil hingga menengah</li>
-<li><strong>Aspirasi:</strong> Menjadi developer profesional dengan portofolio elit dan kreatif</li>
-</ul>
+<p>Saya Web Developer & UI/UX Enthusiast dengan fokus membangun pengalaman digital premium, clean, dan modern.</p>
 </div>
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
 <div class="container">
 <h2>Selected Projects</h2>
-<div class="projects-grid">
-
-  <!-- Project 1 -->
-  <div class="project-card">
-    <img src="assets/images/project1.jpg" alt="Business Landing Page">
-    <div class="project-info">
-      <h3>Business Landing Page</h3>
-      <p>Landing page untuk butik minimalis, menampilkan produk dan brand story.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS, Tailwind</p>
-      <p><strong>Peran:</strong> Designer & Developer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 2 -->
-  <div class="project-card">
-    <img src="assets/images/project2.jpg" alt="Mini Web App">
-    <div class="project-info">
-      <h3>Mini Web App - To-do List</h3>
-      <p>Aplikasi interaktif untuk manajemen tugas harian dengan fitur tambah/hapus/ceklist.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS</p>
-      <p><strong>Peran:</strong> Fullstack Developer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 3 -->
-  <div class="project-card">
-    <img src="assets/images/project3.jpg" alt="Dashboard Analitik">
-    <div class="project-info">
-      <h3>Dashboard Analitik</h3>
-      <p>Dashboard penjualan interaktif menampilkan data grafik, filter, dan responsive UI.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS, Chart.js</p>
-      <p><strong>Peran:</strong> Frontend Developer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 4 -->
-  <div class="project-card">
-    <img src="assets/images/project4.jpg" alt="Mini E-commerce">
-    <div class="project-info">
-      <h3>Mini E-commerce Website</h3>
-      <p>Website toko online kecil menampilkan produk, keranjang belanja, dan checkout sederhana.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS, Tailwind</p>
-      <p><strong>Peran:</strong> Fullstack Developer & UI Designer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 5 -->
-  <div class="project-card">
-    <img src="assets/images/project5.jpg" alt="UX Case Study">
-    <div class="project-info">
-      <h3>UX Case Study (Fiktif)</h3>
-      <p>Redesign halaman utama website startup untuk meningkatkan user experience & visual appeal.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, Figma / Adobe XD</p>
-      <p><strong>Peran:</strong> UX Designer & Frontend Developer</p>
-      <a href="#" target="_blank">Preview Mockup</a>
-      <a href="#" target="_blank">Case Study Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 6 -->
-  <div class="project-card">
-    <img src="assets/images/project6.jpg" alt="Personal Blog">
-    <div class="project-info">
-      <h3>Personal Blog</h3>
-      <p>Blog pribadi menampilkan artikel & insight teknologi.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS, Markdown</p>
-      <p><strong>Peran:</strong> Developer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 7 -->
-  <div class="project-card">
-    <img src="assets/images/project7.jpg" alt="Portfolio Klien">
-    <div class="project-info">
-      <h3>Portfolio Klien</h3>
-      <p>Website showcase untuk klien lokal, menampilkan produk & brand identity.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS</p>
-      <p><strong>Peran:</strong> Fullstack Developer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 8 -->
-  <div class="project-card">
-    <img src="assets/images/project8.jpg" alt="Mini Dashboard Mobile">
-    <div class="project-info">
-      <h3>Mini Dashboard Mobile</h3>
-      <p>Dashboard ringkas untuk mobile view menampilkan statistik & grafis singkat.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS, Tailwind</p>
-      <p><strong>Peran:</strong> Frontend Developer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 9 -->
-  <div class="project-card">
-    <img src="assets/images/project9.jpg" alt="Interactive Quiz App">
-    <div class="project-info">
-      <h3>Interactive Quiz App</h3>
-      <p>Aplikasi kuis edukatif interaktif untuk belajar sambil bermain.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS</p>
-      <p><strong>Peran:</strong> Fullstack Developer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <!-- Project 10 -->
-  <div class="project-card">
-    <img src="assets/images/project10.jpg" alt="E-learning Landing Page">
-    <div class="project-info">
-      <h3>E-learning Landing Page</h3>
-      <p>Landing page kursus online responsif dan fokus konversi tinggi.</p>
-      <p><strong>Teknologi:</strong> HTML, CSS, JS, Tailwind</p>
-      <p><strong>Peran:</strong> Designer & Developer</p>
-      <a href="#" target="_blank">Demo Live</a>
-      <a href="#" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-</div>
+<div class="projects-grid" id="projectsContainer"></div>
 </div>
 </section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-<div class="container">
-<h2>Testimoni Klien</h2>
-<div class="testimonials-grid">
-<div class="testimonial-card">
-<p>"Rius sangat profesional dan cepat memahami kebutuhan kami. Website cafe kami sekarang lebih menarik dan mudah diakses."</p>
-<h4>- Budi, Owner Cafe Aroma</h4>
-</div>
-<div class="testimonial-card">
-<p>"Portofolio Rius menunjukkan skill yang solid. Sangat puas dengan hasil kerja mini kasir online untuk usaha kami."</p>
-<h4>- Sari, Pengusaha Retail</h4>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<div class="container">
-<h2>Hubungi Saya</h2>
-<p>Ingin bekerja sama atau membangun proyek bersama? Hubungi saya sekarang!</p>
-<a href="mailto:devrius0@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-<a href="https://www.linkedin.com/in/rius" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-<a href="https://github.com/riusdev" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-<br><br>
-<a href="CV.pdf" class="cta-btn">Download CV</a>
-</div>
-</section>
-
-<a href="https://wa.me/6281338693093" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <footer>
-&copy; 2026 Rius. All rights reserved.
+© 2026 Rius. All Rights Reserved.
 </footer>
 
+<a href="https://wa.me/6281338693093" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+
 <script>
-const sections=document.querySelectorAll('section');
-const projectCards=document.querySelectorAll('.project-card');
-const testimonialCards=document.querySelectorAll('.testimonial-card');
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}})},{threshold:0.15});
-sections.forEach(sec=>observer.observe(sec));
-projectCards.forEach(card=>observer.observe(card));
-testimonialCards.forEach(card=>observer.observe(card));
+const data=[
+{title:"Business Landing Page",images:["project1-1.jpg","project1-2.jpg","project1-3.jpg"]},
+{title:"Mini Web App – To-do List",images:["project2-1.jpg","project2-2.jpg"]},
+{title:"Dashboard Analitik",images:["project3-1.jpg","project3-2.jpg"]},
+{title:"Mini E-commerce Website",images:["project4-1.jpg","project4-2.jpg","project4-3.jpg"]},
+{title:"UX Case Study",images:["project5-1.jpg","project5-2.jpg"]},
+{title:"Personal Blog",images:["project6-1.jpg","project6-2.jpg"]},
+{title:"Portfolio Klien",images:["project7-1.jpg","project7-2.jpg"]},
+{title:"Mini Dashboard Mobile",images:["project8-1.jpg","project8-2.jpg"]},
+{title:"Interactive Quiz App",images:["project9-1.jpg","project9-2.jpg"]},
+{title:"E-learning Landing Page",images:["project10-1.jpg","project10-2.jpg"]}
+];
+
+const container=document.getElementById("projectsContainer");
+
+data.forEach((project,index)=>{
+let card=document.createElement("div");
+card.className="project-card";
+
+let slides="";
+let dots="";
+
+project.images.forEach((img,i)=>{
+slides+=`<img src="assets/project/${img}" class="${i===0?'active':''}">`;
+dots+=`<span class="${i===0?'active':''}" data-index="${i}"></span>`;
+});
+
+card.innerHTML=`
+<div class="carousel" data-id="${index}">
+${slides}
+<button class="prev">&#10094;</button>
+<button class="next">&#10095;</button>
+<div class="dots">${dots}</div>
+</div>
+<div class="project-info">
+<h3>${project.title}</h3>
+<p>Premium web project with modern UI & interactive experience.</p>
+</div>
+`;
+
+container.appendChild(card);
+});
+
+document.querySelectorAll(".carousel").forEach(carousel=>{
+let images=carousel.querySelectorAll("img");
+let dots=carousel.querySelectorAll(".dots span");
+let current=0;
+
+function showSlide(i){
+images[current].classList.remove("active");
+dots[current].classList.remove("active");
+current=i;
+images[current].classList.add("active");
+dots[current].classList.add("active");
+}
+
+carousel.querySelector(".next").onclick=()=>{
+let i=(current+1)%images.length;
+showSlide(i);
+};
+
+carousel.querySelector(".prev").onclick=()=>{
+let i=(current-1+images.length)%images.length;
+showSlide(i);
+};
+
+dots.forEach(dot=>{
+dot.onclick=()=>{
+showSlide(parseInt(dot.dataset.index));
+};
+});
+
+let auto=setInterval(()=>{
+let i=(current+1)%images.length;
+showSlide(i);
+},3000);
+
+carousel.addEventListener("mouseenter",()=>clearInterval(auto));
+carousel.addEventListener("mouseleave",()=>{
+auto=setInterval(()=>{
+let i=(current+1)%images.length;
+showSlide(i);
+},3000);
+});
+
+});
 </script>
 
 </body>
-      </html>
+</html>
