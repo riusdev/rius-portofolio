@@ -241,16 +241,16 @@ font-size:2.2rem;
 
 <script>
 const data=[
-{title:"Business Landing Page",images:["project1-1.jpg","project1-2.jpg","project1-3.jpg"]},
-{title:"Mini Web App – To-do List",images:["project2-1.jpg","project2-2.jpg"]},
-{title:"Dashboard Analitik",images:["project3-1.jpg","project3-2.jpg"]},
-{title:"Mini E-commerce Website",images:["project4-1.jpg","project4-2.jpg","project4-3.jpg"]},
-{title:"UX Case Study",images:["project5-1.jpg","project5-2.jpg"]},
-{title:"Personal Blog",images:["project6-1.jpg","project6-2.jpg"]},
-{title:"Portfolio Klien",images:["project7-1.jpg","project7-2.jpg"]},
-{title:"Mini Dashboard Mobile",images:["project8-1.jpg","project8-2.jpg"]},
-{title:"Interactive Quiz App",images:["project9-1.jpg","project9-2.jpg"]},
-{title:"E-learning Landing Page",images:["project10-1.jpg","project10-2.jpg"]}
+{title:"Business Landing Page",images:["landing-page1-1.jpg.jpeg","landing-page2-2.jpg.jpeg","landing-page3-3.jpg.jpeg"]},
+{title:"Mini Web App – To-do List",images:["mini-web1-1.jpeg","mini-web2-2.jpeg"]},
+{title:"Dashboard Analitik",images:["dashboard-analityc-1.jpg.jpeg","dashboard-analityc2-2.jpeg"]},
+{title:"Mini E-commerce Website",images:["E-commerce1-1.jpg.jpeg","E-commerce2-2.jpg.jpeg","E-commerce3-3.jpg.jpeg"]},
+{title:"UX Case Study",images:["UX-case-study1-1.jpg.jpeg","UX-case-study2-2.jpg.jpeg"]},
+{title:"Personal Blog",images:["personal-blog1-1.jpg.jpeg","personal-blog2-2.jpg.jpeg"]},
+{title:"Portfolio Klien",images:["portfolio1-1.jpg.jpeg","portfolio2-2.jpg.jpeg"]},
+{title:"Mini Dashboard Mobile",images:["dashboard-mobile1-1.jpg.jpeg","dashboard-mobile2-2.jpg.jpeg"]},
+{title:"Interactive Quiz App",images:["quiz-app1-1.jpg.png","quiz-app2-2.jpg.png"]},
+{title:"E-learning Landing Page",images:["E-learning1-1.jpg.jpeg","E-learning2-2.jpg.jpeg"]}
 ];
 
 const container=document.getElementById("projectsContainer");
@@ -263,7 +263,7 @@ let slides="";
 let dots="";
 
 project.images.forEach((img,i)=>{
-slides+=`<img src="assets/project/${img}" class="${i===0?'active':''}">`;
+slides+=`<img src="assets/images/${img}" class="${i===0?'active':''}">`;
 dots+=`<span class="${i===0?'active':''}" data-index="${i}"></span>`;
 });
 
